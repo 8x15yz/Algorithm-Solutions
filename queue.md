@@ -70,3 +70,68 @@ for tc in range(1, T+1):
                                           # 노드가 이어져있지 않으면 자연스레 0 을 촐력하게됨
 ```
 
+
+
+## 2.2. swea 5105 노드의거리
+
+0325 풀이완
+
+```python 
+def bfs(I, J):
+    queue = [(I, J)]
+    visit = []
+
+    while queue:
+        vi, vj = queue.pop(0)
+        if arr[vi][vj] == '3':
+            # print('도착 !!', vi, vj)
+            return
+
+        elif (vi, vj) not in visit:
+            visit.append((vi, vj))
+
+            for di, dj in d:
+                if 0<=vi+di<N and 0<=vj+dj<N:
+                    if arr[vi+di][vj+dj] == '0':
+                        queue.append((vi+di, vj+dj))
+                        way[vi+di][vj+dj] += way[vi][vj] +1
+                    elif arr[vi+di][vj+dj] == '3':
+                        queue.append((vi + di, vj + dj))
+    # else:
+    #     # print('길이없어 ..')
+
+
+d = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    arr = [list(input()) for _ in range(N)]
+    way = [[0]*N for _ in range(N)]
+
+    # for i in range(N):
+    #     print(arr[i])
+
+    for i in range(N):
+        if '2' in arr[i]:
+            si, sj = i, arr[i].index('2')
+        elif '3' in arr[i]:
+            ei, ej =i,  arr[i].index('3')
+
+    bfs(si, sj)
+
+    # for i in way:
+    #     print(i)
+    ans = []
+    for ai, aj in d:
+        if 0 <= ei + ai < N and 0 <= ej + aj < N:
+            if way[ei + ai][ej + aj] != 0:
+                ans.append(way[ei + ai][ej + aj])
+    if ans == []:
+        answer = 0
+    else:
+        answer = min(ans)
+
+    print('#{} {}'.format(tc, answer))
+```
+
