@@ -98,10 +98,10 @@
 
 #### 220402 토
 
-| 이름               | 경로                                    | 주소                                  |
-| ------------------ | --------------------------------------- | ------------------------------------- |
-| boj 15686 치킨배달 | [boj_15686.py](boj_solved/boj_15686.py) | https://www.acmicpc.net/problem/15686 |
-| boj 14502 연구소   | [boj_14502.py](boj_solved/boj_14502.py) | https://www.acmicpc.net/problem/14502 |
+| 이름               | 경로                                      | 주소                                  |
+| ------------------ | ----------------------------------------- | ------------------------------------- |
+| boj 15686 치킨배달 | [boj_15686.py](./boj_solved/boj_15686.py) | https://www.acmicpc.net/problem/15686 |
+| boj 14502 연구소   | [boj_14502.py](./boj_solved/boj_14502.py) | https://www.acmicpc.net/problem/14502 |
 
 => bfs, combinatinon 사용
 
