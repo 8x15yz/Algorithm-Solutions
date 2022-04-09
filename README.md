@@ -94,22 +94,14 @@
 
 
 
+# algo_solved (2204 ~)
 
+#### 220402 토
 
-# boj_solved (upper gold)
+| 이름               | 경로                                    | 주소                                  |
+| ------------------ | --------------------------------------- | ------------------------------------- |
+| boj 15686 치킨배달 | [boj_15686.py](boj_solved/boj_15686.py) | https://www.acmicpc.net/problem/15686 |
+| boj 14502 연구소   | [boj_14502.py](boj_solved/boj_14502.py) | https://www.acmicpc.net/problem/14502 |
 
-```
-2116 주사위쌓기 (구현/ brute force)
-15686 치킨배달 (구현/ brute force)
-14502 연구소 (구현/ brute force/ bfs)
-```
-
-
-
-
-
-# swea_solved
-
-```
-```
+=> bfs, combinatinon 사용
 
