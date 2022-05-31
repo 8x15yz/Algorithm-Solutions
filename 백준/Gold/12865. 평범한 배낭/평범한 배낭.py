@@ -1,19 +1,15 @@
 import sys
-def knapsnack(W, wt, val, n):
-    K = [[0]*(W+1) for _ in range(n+1)]
-    for i in range(1, n+1):
-        for w in range(1, W+1):
-            if wt[i-1] <= w:
-                K[i][w] = max(val[i-1]+K[i-1][w-wt[i-1]], K[i-1][w])
-            else:
-                K[i][w] = K[i - 1][w]
-    return K[n][W]
-
-wt = []
-val = []
 N, K = map(int, sys.stdin.readline().strip().split())
+value = [[0]*N for _ in range(2)]
+dpArray = [[0]*(K+1) for _ in range(N+1)]
 for i in range(N):
-    w, v = map(int, sys.stdin.readline().strip().split())
-    wt.append(w)
-    val.append(v)
-print(knapsnack(K, wt, val, N))
+    value[0][i], value[1][i] = map(int, sys.stdin.readline().strip().split())
+
+for n in range(1, N+1):
+    for w in range(1, K+1):
+        if value[0][n-1] <= w:
+            dpArray[n][w] = max(value[1][n-1] + dpArray[n-1][w-value[0][n-1]], dpArray[n-1][w])
+        else:
+            dpArray[n][w] = dpArray[n-1][w]
+
+print(dpArray[N][K])
