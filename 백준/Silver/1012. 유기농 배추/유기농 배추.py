@@ -12,7 +12,7 @@ def bfs():
         for di, dj in d:
             ni, nj = di+si, dj+sj
             if 0 <= ni < M and 0 <= nj < N and arr[ni][nj] == 1:
-                arr[ni][nj] = 0
+                arr[ni][nj] = 0  # Key Code!! 중복방문되지 않게 방문처리해주는 코드 추가
                 queue.append((ni, nj))
 
 T = int(sys.stdin.readline())
