@@ -12,6 +12,9 @@
 [boj 1012 유기농 배추](백준/Silver/1012. 유기농 배추/) <br>
 <br>
 ## 0604 sat
+## 0605 sun
+## 0606 mon
 [boj 14503 로봇청소기]() . [link](https://www.acmicpc.net/problem/14503)<br>
 [boj 16236 아기 상어]() . [link](https://www.acmicpc.net/problem/16236)<br>
 [swea 5174 subtree]() . [link]()
+
