@@ -23,8 +23,12 @@ https://covenant.tistory.com/132 <br>
 <br>
 ## 0607 tue
 [boj 16236 아기 상어❌]() . [link](https://www.acmicpc.net/problem/16236)<br>
-[swea 5174 subtree]() . [link](https://swexpertacademy.com/main/learn/course/lectureProblemViewer.do)<br>
 아기상어 이새끼 내가 화요일에는 꼭 기강잡아준다<br>
 +) 아기상어에게 졌다 .. ㅠㅠ 일단 bfs 최단거리문제부터 익숙해지고 와야될듯<br>
 <br>
 ## 0608 wed
+[swea 5174 subtree✅](swea/5174_subtree.py)<br>
+[boj 1260 DFS와 BFS]() . [link](https://www.acmicpc.net/problem/1260)<br>
+[boj 2178 미로 탐색]() . [link](https://www.acmicpc.net/problem/2178)<br>
+[boj 1697 숨바꼭질]() . [link](https://www.acmicpc.net/problem/1697)<br>
+[boj 11724 연결 요소의 개수]() . [link](https://www.acmicpc.net/problem/11724)<br>
