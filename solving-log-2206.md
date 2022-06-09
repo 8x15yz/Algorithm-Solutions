@@ -30,10 +30,11 @@ https://covenant.tistory.com/132 <br>
 [swea 5174 subtree✅](swea/5174_subtree.py)<br>
 <br>
 ## 0609 thu
-[boj 1260 DFS와 BFS]() . [link](https://www.acmicpc.net/problem/1260)<br>
+[boj 1260 DFS와 BFS✅](백준/Silver/1260. DFS와 BFS) . [link](https://www.acmicpc.net/problem/1260)<br>
 [boj 2178 미로 탐색✅](백준/Silver/2178. 미로 탐색) . [link](https://www.acmicpc.net/problem/2178)<br>
 [boj 1697 숨바꼭질✅](백준/Silver/1697. 숨바꼭질) . [link](https://www.acmicpc.net/problem/1697)<br>
 [boj 11724 연결 요소의 개수✅](백준/Silver/11724. 연결 요소의 개수) . [link](https://www.acmicpc.net/problem/11724)<br>
 ![image](https://user-images.githubusercontent.com/87743473/172831040-0376ba32-459a-49a3-99fa-268cf0efd196.png) 레벨오른날 ~ <br>
+나이제 지ㅣㄴ심으로 좀 bfs dfs좀 잘한다고 자신있게 
 <br>
 ## 0610 fri
