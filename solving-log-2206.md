@@ -35,6 +35,12 @@ https://covenant.tistory.com/132 <br>
 [boj 1697 숨바꼭질✅](백준/Silver/1697. 숨바꼭질) . [link](https://www.acmicpc.net/problem/1697)<br>
 [boj 11724 연결 요소의 개수✅](백준/Silver/11724. 연결 요소의 개수) . [link](https://www.acmicpc.net/problem/11724)<br>
 ![image](https://user-images.githubusercontent.com/87743473/172831040-0376ba32-459a-49a3-99fa-268cf0efd196.png) 레벨오른날 ~ <br>
-나이제 지ㅣㄴ심으로 좀 bfs dfs좀 잘한다고 자신있게 
+나이제 지ㅣㄴ심으로 좀 bfs dfs좀 잘한다고 자신있게 말할수잇어
 <br>
 ## 0610 fri
+[boj 2667 단지번호붙이기]() . [link](https://www.acmicpc.net/problem/2667)<br>
+[boj 6603 로또]() . [link](https://www.acmicpc.net/problem/6603)<br>
+[boj 7576 토마토]() . [link](https://www.acmicpc.net/problem/7576)<br>
+[boj 7562 나이트의 이동]() . [link](https://www.acmicpc.net/problem/7562)<br>
+
+<br>
