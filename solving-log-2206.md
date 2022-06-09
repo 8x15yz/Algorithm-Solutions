@@ -34,3 +34,6 @@ https://covenant.tistory.com/132 <br>
 [boj 2178 미로 탐색]() . [link](https://www.acmicpc.net/problem/2178)<br>
 [boj 1697 숨바꼭질✅](백준/Silver/1697. 숨바꼭질) . [link](https://www.acmicpc.net/problem/1697)<br>
 [boj 11724 연결 요소의 개수✅](백준/Silver/11724. 연결 요소의 개수) . [link](https://www.acmicpc.net/problem/11724)<br>
+![image](https://user-images.githubusercontent.com/87743473/172831040-0376ba32-459a-49a3-99fa-268cf0efd196.png) 레벨오른날 ~ <br>
+<br>
+## 0610 fri
