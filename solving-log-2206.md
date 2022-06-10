@@ -38,9 +38,10 @@ https://covenant.tistory.com/132 <br>
 나이제 지ㅣㄴ심으로 좀 bfs dfs좀 잘한다고 자신있게 말할수잇어
 <br>
 ## 0610 fri
-[boj 2667 단지번호붙이기]() . [link](https://www.acmicpc.net/problem/2667)<br>
-[boj 6603 로또]() . [link](https://www.acmicpc.net/problem/6603)<br>
+[boj 2667 단지번호붙이기✅](백준/Silver/2667. 단지번호붙이기) . [link](https://www.acmicpc.net/problem/2667)<br>
+[boj 6603 로또✅](백준/Silver/6603. 로또) . [link](https://www.acmicpc.net/problem/6603)<br>
 [boj 7576 토마토]() . [link](https://www.acmicpc.net/problem/7576)<br>
 [boj 7562 나이트의 이동]() . [link](https://www.acmicpc.net/problem/7562)<br>
+combination 재귀 코드? 단연 완벽한 코드라 
 
 <br>
