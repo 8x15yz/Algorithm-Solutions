@@ -43,6 +43,6 @@ https://covenant.tistory.com/132 <br>
 combination 재귀 코드? 단연 완벽한 코드라고 자신있게 ㅂ말할 수 있음
 <br>
 ## 0611 sat
-[boj 7576 토마토]() . [link](https://www.acmicpc.net/problem/7576)<br>
+[boj 7576 토마토✅](백준/Gold/7576. 토마토) . [link](https://www.acmicpc.net/problem/7576)<br>
 [boj 7562 나이트의 이동]() . [link](https://www.acmicpc.net/problem/7562)<br>
 <br>
