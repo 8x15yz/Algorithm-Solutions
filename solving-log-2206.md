@@ -56,5 +56,5 @@ combination 재귀 코드? 단연 완벽한 코드라고 자신있게 ㅂ말할 
 <br>
 ## 0627 tue
 [boj 16236 아기 상어✅](백준/Gold/16236. 아기 상어) . [link](https://www.acmicpc.net/problem/16236)<br>
-아기상어 드디어 혼쭐내줬다 
+아기상어 드디어 혼쭐내줬다 ㅎㅎ
 <br>
