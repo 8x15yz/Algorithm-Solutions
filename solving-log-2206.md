@@ -23,7 +23,7 @@ https://covenant.tistory.com/132 <br>
 <br>
 ## 0607 tue
 [boj 16236 아기 상어❌]() . [link](https://www.acmicpc.net/problem/16236)<br>
-아기상어 이새끼 내가 화요일에는 꼭 기강잡아준다<br>
+아기상어 이놈자식 내가 화요일에는 꼭 기강잡아준다<br>
 +) 아기상어에게 졌다 .. ㅠㅠ 일단 bfs 최단거리문제부터 익숙해지고 와야될듯<br>
 <br>
 ## 0608 wed
@@ -56,4 +56,5 @@ combination 재귀 코드? 단연 완벽한 코드라고 자신있게 ㅂ말할 
 <br>
 ## 0627 tue
 [boj 16236 아기 상어✅](백준/Gold/16236. 아기 상어) . [link](https://www.acmicpc.net/problem/16236)<br>
+아기상어 드디어 혼쭐내줬다 
 <br>
