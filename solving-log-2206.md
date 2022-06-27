@@ -53,6 +53,7 @@ combination 재귀 코드? 단연 완벽한 코드라고 자신있게 ㅂ말할 
 ## 0613 mon
 ## 0622 wed
 [swea 2001 파리퇴치1 : 자바 리팩터링✅](swea/2001_파리퇴치.java)<br>
-[boj 16236 아기 상어]() . [link](https://www.acmicpc.net/problem/16236)<br>
 <br>
-
+## 0627 tue
+[boj 16236 아기 상어✅](백준/Gold/16236. 아기 상어) . [link](https://www.acmicpc.net/problem/16236)<br>
+<br>
