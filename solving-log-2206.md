@@ -1,3 +1,8 @@
+# 풀 문제
+[boj 2636⬜](https://www.acmicpc.net/problem/2636)<br>
+[boj 1011⬜](https://www.acmicpc.net/problem/1011)<br>
+[boj 1036⬜](https://www.acmicpc.net/problem/1036)<br>
+<br>
 # 문제추천 셋
 ### DFS/ BFS
 https://covenant.tistory.com/132 <br>
