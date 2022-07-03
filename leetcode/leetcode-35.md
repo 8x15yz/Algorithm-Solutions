@@ -10,8 +10,7 @@ middle_index = ((end-start)//2) + start
 # start = 0
 # end = len(list)-1
 ```
-and with this index, we compare with target value.
-maybe it will occer two situatios:<br>
+with using this index, we can compare with target value. and maybe it will occer two situations:<br>
 1. target value > middle one
 <br>or
 2. target value < middle one<br>
@@ -24,7 +23,7 @@ that is the end of binary search !! now we just need to repeat these process.<br
 my solution is [here](./leetcode-35.py), and you can see my code together as you reading this page.<br>
 <br>
 
-### line 3~4
+### line 3 ~ 4
 I make the function for recursion, its input value is:
 ```
 nums (input list)
@@ -32,4 +31,8 @@ terget (input value)
 fs (start index)
 ed (end index)
 ```
-and the next line, I writed the code that can calculate middle index.
+the next line, I writed the code that can calculate middle index.
+and we jump to line 14 ...
+### line 14 ~ 17
+
+there are two situations we have, 
