@@ -1,5 +1,5 @@
 # Binary Search
-I solved using **binary search** with **recursion**
+<br>
 ## the concept about binary search is .. 
 We are gived target value and list. and we have to find the index that the value would be located. list is sorted list and it is odd or even also.<br>
 to searching, we have to get the index which is the middle one about the list. let's call this "middle index". there is way to carculate middle index, it's same for both list odd and even. <br>following code is used to get middle index.<br>
