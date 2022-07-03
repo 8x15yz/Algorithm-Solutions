@@ -1,6 +1,6 @@
 # Algorithm-Solutions
 This repository is for studying Algorithmes. I'm trying **baekjoon**, **swea** , **leetcode** and any other problems. <br>
-I'm explain my solution mostly Korean, but I'm writing in English version also. if you want to look my solving-log in Eng version, go [here](./leetcode). <br>
+I'm explain my solution mostly Korean, but I'm writing in English also. if you want to look my solving-log in Eng version, go [here](./leetcode). <br>
 
 <br>
 
