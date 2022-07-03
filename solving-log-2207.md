@@ -10,5 +10,5 @@
 <br>
 ## 0703 sun <br>
 [boj 1036 36진수❌](https://www.acmicpc.net/problem/1036) 아니 이거모임 ..? <br>
-[binary search 개념정리](leetcode/binary-search)<br>
+[binary search 개념정리 ✅️](leetcode/binary-search)<br>
 [leetcode 35 Search Insert Position ✅](leetcode/binary-search/35)
