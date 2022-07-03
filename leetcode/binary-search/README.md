@@ -1,7 +1,7 @@
 # Binary Search
 <br>
 
-## the concept about binary search is .. 
+## the concept of binary search is .. 
 We are gived target value and list. and we have to find the index that the value would be located. list has been sorted and its count is odd or even also.<br>
 to searching, we have to get the index which is the middle one about the list. let's call this "middle index". there is way to carculate middle index, it can be same applies to both list odd and even. <br>following code is used to get middle index.<br>
 ```
