@@ -1,5 +1,7 @@
 # Algorithm-Solutions
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+This repository is for studying algorithmes. I'm trying **baekjoon**, **swea** , **leetcode** and any other problems. <br>
+I'm explain my solution mostly Korean, but if you want to look my solving-log in English version, go [here](./leetcode). <br>
+
 <br>
 # solving-log
 [2022-05](./solving-log-2205.md)<br>
