@@ -1,4 +1,4 @@
-# 35. Search Insert Position
+# Binary Search
 I solved using **binary search** with **recursion**
 ## the concept about binary search is .. 
 We are gived target value and list. and we have to find the index that the value would be located. list is sorted list and it is odd or even also.<br>
@@ -18,21 +18,10 @@ with using this index, we can compare with target value. and maybe it will occer
 if target value is bigger than middle one, the range will be reset to "middle ~ end"<br> 
 and if target value is smaller than middle one, the range will be reset to "start ~ middle"<br><br>
 that is the end of binary search !! now we just need to repeat these process.<br>
-
-## explain my solution 
-my solution is [here](./leetcode-35.py), and you can see my code together as you reading this page.<br>
+<br>
+okey, now I'm ready to solve solve this part. <br>
+<br>
 <br>
 
-### line 3 ~ 4
-I make the function for recursion, its input value is:
-```
-nums (input list)
-terget (input value)
-fs (start index)
-ed (end index)
-```
-the next line, I writed the code that can calculate middle index.
-and we jump to line 14 ...
-### line 14 ~ 17
-
-there are two situations we have, 
+## solving problems
+[35. Search Insert Position](./35)<br>
