@@ -19,7 +19,7 @@ if target value is bigger than middle one, the range will be reset to "middle ~ 
 and if target value is smaller than middle one, the range will be reset to "start ~ middle"<br><br>
 that is the end of binary search !! now we just need to repeat these process.<br>
 <br>
-okey, now I'm ready to solve solve this part. <br>
+okey, now I'm ready to solve this part. <br>
 <br>
 <br>
 
