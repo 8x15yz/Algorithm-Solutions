@@ -31,3 +31,5 @@
 [swea 4615 재미있는 오셀로 게임⬜](swea/4615_재미있는오셀로게임.py )[.link](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?contestProbId=AWQmA4uK8ygDFAXj&solveclubId=AX7SVT1KNuoDFAVm&problemBoxTitle=%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C&problemBoxCnt=22&probBoxId=AX77z0eKBlcDFAW0)<br>
 [boj 1303 전투✅](백준/Silver/1303_전투.py)<br>
 <br>
+![](https://user-images.githubusercontent.com/87743473/178133792-8178476c-841e-406c-a952-a080d60a60ba.png)
+아니 이건 ??? 문제를 하나 더 풀 수 밖에 없다
