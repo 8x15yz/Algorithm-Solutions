@@ -15,3 +15,7 @@
 <br>
 ## 0709 sat <br>
 [swea 1204 최빈수 구하기✅](swea/1204_최빈수구하기.py )<br>
+[swea 4615 재미있는 오셀로 게임❌](swea/4615_재미있는오셀로게임.py )[.link](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?contestProbId=AWQmA4uK8ygDFAXj&solveclubId=AX7SVT1KNuoDFAVm&problemBoxTitle=%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C&problemBoxCnt=22&probBoxId=AX77z0eKBlcDFAW0)<br>
+<br>
+## 0710 sun <br>
+[swea 4615 재미있는 오셀로 게임⬜](swea/4615_재미있는오셀로게임.py )[.link](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?contestProbId=AWQmA4uK8ygDFAXj&solveclubId=AX7SVT1KNuoDFAVm&problemBoxTitle=%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C&problemBoxCnt=22&probBoxId=AX77z0eKBlcDFAW0)<br>
