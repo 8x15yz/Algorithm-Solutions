@@ -13,8 +13,4 @@
 [boj 17086 아기상어2 ⬜](https://www.acmicpc.net/problem/17086)<br>
 [boj 16930 달리기 ⬜](https://www.acmicpc.net/problem/16930)<br>
 # 문제풀이 기록
-## 0701 fri <br>
-[boj 2636 치즈❌](https://www.acmicpc.net/problem/2636) <br>
-이문제도 까다롭다 .. 오늘은 어떻게 풀어야 될 지 생각해봤는데<br>
-이건 어떻게 풀어야될까 ?? 테두리를 따라가게 할 수 있는 방법이 있을까 ??<br>
-<br>
+
