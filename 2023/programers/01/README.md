@@ -1,0 +1,13 @@
+# 01월 코테 준비
+
+### 0119 목
+✅ [[lv.01] 개인정보 수집 유효기간](https://www.notion.so/54f55e08340542308d5c2621ec3ed307) <br>
+✅ [[lv.01] 크기가 작은 부분 문자열](https://www.notion.so/4307b6292d794a7faa5c67b529873acd) <br>
+✅ [[lv.01] 가장 가까운 같은 글자](https://www.notion.so/fac83a49177f41bfad8d4167d6e79bb0) <br>
+✅ [[lv.01] 문자열 나누기](https://www.notion.so/0f3790f2feea453590639194e3c35f3f) <br>
+✅ [[lv.00] 다음에 올 숫자](https://www.notion.so/1b78aa95490c4e5fa7150b25f6cecf23) <br>
+<br>
+### 0120 금
+✅ [[lv.01]]() <br>
+✅ [[lv.01]]() <br>
+✅ [[lv.01]]() <br>
