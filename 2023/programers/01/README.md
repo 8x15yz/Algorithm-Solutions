@@ -8,6 +8,6 @@
 ✅ [[lv.00] 다음에 올 숫자](https://www.notion.so/1b78aa95490c4e5fa7150b25f6cecf23) <br>
 <br>
 ### 0120 금
-✅ [[lv.01]]() <br>
+✅ [[lv.01] 명예의 전당](https://school.programmers.co.kr/learn/courses/30/lessons/138477) <br>
 ✅ [[lv.01]]() <br>
 ✅ [[lv.01]]() <br>
