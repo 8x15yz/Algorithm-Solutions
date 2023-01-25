@@ -9,5 +9,16 @@
 <br>
 ### 0120 금
 ✅ [1️⃣ 명예의 전당](https://school.programmers.co.kr/learn/courses/30/lessons/138477) <br>
-✅ [1️⃣ ]() <br>
-✅ [1️⃣ ]() <br>
+✅ [1️⃣ 기사단원의 무기](https://school.programmers.co.kr/learn/courses/30/lessons/136798) <br>
+✅ [1️⃣ 푸드 파이트 대회](https://school.programmers.co.kr/learn/courses/30/lessons/134240) <br>
+✅ [1️⃣ 햄버거 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/133502) <br>
+✅ [1️⃣ 콜라 문제](https://school.programmers.co.kr/learn/courses/30/lessons/133267) <br>
+<br>
+### 0123 일
+✅ [1️⃣ 성격유형 검사하기](https://school.programmers.co.kr/learn/courses/30/lessons/118666) <br>
+✅ [1️⃣ 삼총사](https://school.programmers.co.kr/learn/courses/30/lessons/131705) <br>
+✅ [1️⃣ 숫자 짝꿍](https://school.programmers.co.kr/learn/courses/30/lessons/131128) <br>
+✅ [1️⃣ 신고결과 받기](https://school.programmers.co.kr/learn/courses/30/lessons/92334) <br>
+<br>
+### 0125 수
+✅ [1️⃣ 최소직사각형](https://school.programmers.co.kr/learn/courses/30/lessons/86491) <br>
