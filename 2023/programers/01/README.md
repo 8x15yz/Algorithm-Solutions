@@ -14,11 +14,18 @@
 ✅ [1️⃣ 햄버거 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/133502) <br>
 ✅ [1️⃣ 콜라 문제](https://school.programmers.co.kr/learn/courses/30/lessons/133267) <br>
 <br>
-### 0123 일
+### 0123 월
 ✅ [1️⃣ 성격유형 검사하기](https://school.programmers.co.kr/learn/courses/30/lessons/118666) <br>
 ✅ [1️⃣ 삼총사](https://school.programmers.co.kr/learn/courses/30/lessons/131705) <br>
 ✅ [1️⃣ 숫자 짝꿍](https://school.programmers.co.kr/learn/courses/30/lessons/131128) <br>
+<br>
+### 0124 화
 ✅ [1️⃣ 신고결과 받기](https://school.programmers.co.kr/learn/courses/30/lessons/92334) <br>
 <br>
 ### 0125 수
+✅ [1️⃣ 최소직사각형](https://school.programmers.co.kr/learn/courses/30/lessons/86491) <br>
+✅ [1️⃣ 최소직사각형](https://school.programmers.co.kr/learn/courses/30/lessons/86491) <br>
+✅ [1️⃣ 최소직사각형](https://school.programmers.co.kr/learn/courses/30/lessons/86491) <br>
+✅ [1️⃣ 최소직사각형](https://school.programmers.co.kr/learn/courses/30/lessons/86491) <br>
+✅ [1️⃣ 최소직사각형](https://school.programmers.co.kr/learn/courses/30/lessons/86491) <br>
 ✅ [1️⃣ 최소직사각형](https://school.programmers.co.kr/learn/courses/30/lessons/86491) <br>
