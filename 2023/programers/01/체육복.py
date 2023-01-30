@@ -64,3 +64,32 @@ def solution(n, lost, reserve):
     return answer
 
 
+# 정답 문제: 어이없는 실수
+def solution(n, lost, reserve):
+    answer = 0
+    student = [0]
+    for i in range(n):
+        if i+1 in reserve and i+1 not in lost: # 체육복 하나 남는경우
+            student.append(2)
+        elif i+1 in reserve and i+1 in lost: # 체육복이 하나밖에 없는 경우 (1)
+            student.append(1)
+            lost.remove(i+1)
+        elif i+1 not in reserve and i+1 not in lost: # 체육복이 하나밖에 없는 경우 (2)
+            student.append(1)
+        elif i+1 in lost and i+1 not in reserve: # 체육복을 도난당한경우
+            student.append(0)
+    student.append(0)
+    
+    for lo in sorted(lost):  # 진짜 고약하네 이 문제 .. 정렬 안 돼 있는  케이스에 대해서는 정렬을 하고 시작해야됨
+        if student[lo-1] == 2:
+            student[lo-1] = 1
+            student[lo] = 1
+        elif student[lo+1] == 2:
+            student[lo+1] = 1
+            student[lo] = 1
+    for stu in student:
+        if stu != 0:
+            answer += 1
+            
+    return answer
+
