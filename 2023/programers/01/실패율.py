@@ -52,4 +52,48 @@ def solution(N, stages):
     
     return answer
 
+## 정답코드 : 제로디비전에러 고려하기
+def solution(N, stages):
+    answer = []
+    stage = [0 for _ in range(N+1)] # 0:완료, 1~N:잔류
+    player = len(stages)
+    for mem in stages:
+        if mem == N+1:
+            stage[0] += 1
+        else:
+            stage[mem] += 1
+            
+    failure = [[0, i+1] for i in range(N)]
+    for mem in range(1, len(stage)):
+        if stage[mem] !=0 and stage[mem] !=0: ## 제로디비전에러를 고려하기
+            failure[mem-1][0] = stage[mem]/player
+        player -= stage[mem]
+        
+    for ans in sorted(failure, reverse=True, key=lambda x:x[0]):
+        answer.append(ans[1])
+    
+    return answer
+
+
+## 정답코드 : 제로디비전에러 고려하기 + 람다로 리스트 정렬 꼭 하기
+def solution(N, stages):
+    answer = []
+    stage = [0 for _ in range(N+1)] # 0:완료, 1~N:잔류
+    player = len(stages)
+    for mem in stages:
+        if mem == N+1:
+            stage[0] += 1
+        else:
+            stage[mem] += 1
+            
+    failure = [[0, i+1] for i in range(N)]
+    for mem in range(1, len(stage)):
+        if stage[mem] !=0 and stage[mem] !=0: ## 제로디비전에러를 고려하기
+            failure[mem-1][0] = stage[mem]/player
+        player -= stage[mem]
+        
+    for ans in sorted(failure, reverse=True, key=lambda x:x[0]):
+        answer.append(ans[1])
+    
+    return answer
 
