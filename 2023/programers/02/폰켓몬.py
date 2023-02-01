@@ -24,3 +24,14 @@ def solution(nums):
             if answer < len(set(list(pset))):
                 answer = len(set(list(pset)))
     return answer
+
+
+# 정답코드
+# 논리를 좀 더 생각해보면 브루트 포스 안해도됨
+def solution(nums):
+    answer = 0
+    if len(set(nums)) < len(nums)//2:
+        answer = len(set(nums))
+    else:
+        answer = len(nums)//2
+    return answer
