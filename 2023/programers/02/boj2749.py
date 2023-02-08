@@ -24,5 +24,20 @@ def fibbo(n):
 
 print(fibbo(N))
 
-# 
+# 귀납법으로 짠 코드
+N = int(input())
+fm = [[1, 1], [1, 0]]
+fma = [[1, 1], [1, 0]]
+for _ in range(N - 3):
+    fmans = [[0, 0], [0, 0]]
+    fmans[0][0] = (fma[0][0]*fm[0][0]) + (fma[0][1]*fm[1][0])
+    fmans[0][1] = (fma[0][0]*fm[0][1]) + (fma[0][1]*fm[1][1])
+    fmans[1][0] = (fma[1][0]*fm[0][0]) + (fma[1][1]*fm[1][0])
+    fmans[1][1] = (fma[1][0]*fm[0][1]) + (fma[1][1]*fm[1][1])
+    fma = fmans
+
+print(sum(fmans[0]))
+# 인데도 시간초과났음 ..
+
+
 
