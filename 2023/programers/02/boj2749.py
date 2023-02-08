@@ -10,6 +10,19 @@ for i in range(N-1):
 
 print(fibn)
 
+# 틀린코드
+N = int(input())
+# 재귀함수 써보기
+# 재귀함수로는 최대깊이 도달에러 남 = 쓰면 안된다는 뜻
+def fibbo(n):
+  if n == 0:
+    return 0
+  elif n == 1:
+    return 1
+  else:
+    return fibbo(n-1)+fibbo(n-2)
 
-# 정답코드
+print(fibbo(N))
+
+# 
 
