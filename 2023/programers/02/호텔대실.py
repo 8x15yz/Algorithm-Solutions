@@ -11,11 +11,17 @@ def solution(book_time):
     
     hotel = [[(0, 0)]]
     for i in range(len(InOuty)):
-        for room in hotel:
-            if room[-1][1] <= InOuty[i][0]:
-                room.append(InOuty[i])
+        for room in range(len(hotel)):
+            print(room)
+            if hotel[room][-1][1] <= InOuty[i][0]:
+                hotel[room].append(InOuty[i])
             else:
                 hotel.append([InOuty[i]])
-                break
-
+                #break <= 여기에서 에러남
+        
+        print(hotel[-1])
     return len(hotel)
+
+
+
+# 뜯어고쳐야됨
