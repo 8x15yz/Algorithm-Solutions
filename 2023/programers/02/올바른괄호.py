@@ -39,3 +39,16 @@ def solution(s):
     else:
         answer = False
     return answer
+
+
+def solution(s):
+    stack = []
+    for b in s:
+        if b == '(':
+            stack.append(b)
+        elif stack and b == ')':
+            stack.pop()
+        else:
+            return False
+
+    return False if stack else True
