@@ -41,6 +41,7 @@ def solution(s):
     return answer
 
 
+# 정답코드
 def solution(s):
     stack = []
     for b in s:
