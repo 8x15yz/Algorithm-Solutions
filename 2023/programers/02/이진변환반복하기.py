@@ -1,4 +1,6 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/70129
+
+# 제출 안되고있는 코드
 def solution(s):
     cnt, lev = 0, 0
     while True:
