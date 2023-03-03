@@ -66,3 +66,21 @@ def solution(s):
     return answer
 
 
+# 스택으로 기본케이스 다 풀렸는데 효율성에서 막힘 
+def solution(s):
+    answer = 0
+    s = list(s)
+    stack = [s.pop(0)]
+    while s:
+        a = s.pop(0)
+        if stack and a == stack[-1]:
+            stack.pop()
+        else:
+            stack.append(a)
+    answer = 0 if stack else 1
+        
+    return answer
+
+
+
+
