@@ -49,6 +49,8 @@ def solution(s):
             
         if s[i] == s[i+1]:
             s = s[:i]+s[i+2:]
+            # replace 또는 [:index]+[index+2:]를 사용하면 문자열 일부를 훑기때문에 효율성 테스트에서 실패합니다.
+            # 진짜 명치맞음ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
         i += 1
         
         for i in range(len(s)-1):
