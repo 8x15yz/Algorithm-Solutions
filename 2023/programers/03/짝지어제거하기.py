@@ -82,5 +82,20 @@ def solution(s):
     return answer
 
 
+# 정답코드
+def solution(s):
+    answer = 0
+    stack = []
+    for a in s:
+        if stack and a == stack[-1]:
+            stack.pop()
+        else:
+            stack.append(a)
+            
+    answer = 0 if stack else 1
+    return answer
+
+# while에서 pop(0) 하는 부분을 for문으로 처리를 하면 되는 문제였음 ... 나는 바보가 맞다
+
 
 
