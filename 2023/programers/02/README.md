@@ -1,4 +1,5 @@
 # 02월 코테 준비
+![image](https://user-images.githubusercontent.com/87743473/223004189-16152ca2-1097-4233-b7a4-3503d7b3c335.png)
 
 <br><br>
 ### 0201 수
