@@ -1,5 +1,5 @@
 # 03월 코테 준비
-
+![image](https://user-images.githubusercontent.com/87743473/223004501-bf3ca245-1182-44ca-8d0e-79edcd04e9aa.png)
 
 <br><br>
 ### 0302 목
