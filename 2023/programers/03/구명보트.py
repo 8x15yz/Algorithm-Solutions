@@ -43,3 +43,24 @@ def solution(people, limit):
             # print(cnt)
             cnt = 0
     return answer
+
+# 지독하네 .. 인덱스 접근으로 풀어봤는데 틀림
+def solution(people, limit):
+    answer = 0
+    people = sorted(people, reverse=True)
+    i = 0
+    cnt, weight = 0, 0
+    # a+b > limit => a만 내보내고 index를 b에 포커스 / cnt,weight 초기화 
+    # a+b < limit => a, b 둘 다 내보내고 index를 b+1에 포커스 / cnt,weight 초기화 
+    while i < len(people):
+        if i+1 < len(people) and people[i]+people[i+1] > limit:
+            i += 1
+            answer += 1
+        elif i+1 < len(people) and people[i]+people[i+1] <= limit:
+            i += 2
+            answer += 1
+        else:
+            answer += 1
+            break
+            
+    return answer
