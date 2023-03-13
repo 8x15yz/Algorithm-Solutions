@@ -16,5 +16,15 @@ def solution(n):
  
 ## 시간초과함 .. 아놔
 ## append 때문에 시갖초과되는듯 이거 없앨 생각을 해봐야겟음
-## 정답코드
 
+
+## 정답코드
+def solution(n):
+    ans = 1
+    while n!= 1:
+        if n%2 == 0:
+            n //=2
+        else:
+            n-=1
+            ans += 1
+    return ans
