@@ -6,6 +6,7 @@ I usually explain my solution mostly with Korean, but I'm writing in English als
 <br>
 
 # solving-log
+[알고리즘 문제 풀이 기록 노션]()<br>
 [2023-03](./2023/programers/03)<br>
 [2023-02](./2023/programers/02)<br>
 [2023-01](./2023/programers/01)<br>
