@@ -1,6 +1,6 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/17683
 
-## 처음 풀이
+## 처음 풀이 0406 ##############################################################################################
 def solution(m, musicinfos):
     #musicinfos = 음악이 시작한 시각, 끝난 시각, 음악 제목, 악보 정보
     #조건이 일치하는 음악이 여러 개일 때: '재생된 시간'이 제일 긴 음악
@@ -37,7 +37,7 @@ def solution(m, musicinfos):
     return maxAns[1]
 
 
-## 이어서 풀다가 만거
+## 이어서 풀다가 만거 ##############################################################################################
 def solution(m, musicinfos):
     #musicinfos = 음악이 시작한 시각, 끝난 시각, 음악 제목, 악보 정보
     #조건이 일치하는 음악이 여러 개일 때: '재생된 시간'이 제일 긴 음악
@@ -72,10 +72,6 @@ def solution(m, musicinfos):
         for dot in range(neoListenedM):
             if m[dot:dot+compareing] == msFdot:
                 pass
-                ###### 이부분 짜고 있었음######
-                
-        
- 
     ## 정답 가져오는 부분
     maxAns = [-99, '']
     for ans in checkThisMusicIsAccurate:
@@ -83,3 +79,54 @@ def solution(m, musicinfos):
             maxAns = ans
     print(checkThisMusicIsAccurate)
     return maxAns[1]
+
+
+
+## 0410 푸는중 ##############################################################################################
+dots = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+dotsdict = {"C":0, "C#":1, "D":2, "D#":3, "E":4, "F":5, "F#":6, "G":7, "G#":8, "A":9, "A#":10, "B":11}
+
+def encoding(view):
+    musicSheet = []
+    for j in range(len(view)):
+        if j < len(view)-1 and view[j+1] == "#": musicSheet.append(dotsdict[view[j:j+2]])
+        elif view[j] == "#": continue
+        else: musicSheet.append(dotsdict[view[j]])
+    return musicSheet
+
+
+def solution(m, musicinfos):
+    maxPlayTime = -99
+    answer = ''
+    m = encoding(m)
+    for find in musicinfos:
+        startH, startM, endH, endM = int(find[0:2]), int(find[3:5]), int(find[6:8]), int(find[9:11])
+        totalM = 0
+        totalM = 60-startM+endM if endH > startH else endM
+        musicTitle, musicSheet = '', ''
+        for k in range(12, len(find)):
+            if find[k] != ',': musicTitle += find[k]
+            else: 
+                musicSheet = encoding(find[k+2:])
+                print(totalM, musicTitle, musicSheet, m)
+                
+                musicSheetM = len(musicSheet)
+                for i in range(musicSheetM):
+                    print("들어가?", m[0], musicSheet[i])
+                    if m[0] == musicSheet[i]:
+                        print(m[0], musicSheet[i], 0, i, "1번")
+                        sheetId = i
+                        for neo in m:
+                            print(musicSheet[sheetId], neo, "??", end="")
+                            if neo != musicSheet[sheetId]: print("틀렧");break
+                            else: sheetId = 0 if sheetId == musicSheetM-1 else sheetId + 1
+                            print('맞----')
+                        else: 
+                            print("2번")
+                            if maxPlayTime < totalM : 
+                                maxPlayTime, answer = totalM, musicTitle
+                                break
+
+                else: break
+
+    return answer
