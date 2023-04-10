@@ -82,7 +82,7 @@ def solution(m, musicinfos):
 
 
 
-## 0410 푸는중 ##############################################################################################
+## 0410 푸는중 63점 ##############################################################################################
 dots = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 dotsdict = {"C":0, "C#":1, "D":2, "D#":3, "E":4, "F":5, "F#":6, "G":7, "G#":8, "A":9, "A#":10, "B":11}
 
@@ -107,22 +107,16 @@ def solution(m, musicinfos):
         for k in range(12, len(find)):
             if find[k] != ',': musicTitle += find[k]
             else: 
-                musicSheet = encoding(find[k+2:])
-                print(totalM, musicTitle, musicSheet, m)
+                musicSheet = encoding(find[k+1:])
                 
                 musicSheetM = len(musicSheet)
                 for i in range(musicSheetM):
-                    print("들어가?", m[0], musicSheet[i])
                     if m[0] == musicSheet[i]:
-                        print(m[0], musicSheet[i], 0, i, "1번")
                         sheetId = i
                         for neo in m:
-                            print(musicSheet[sheetId], neo, "??", end="")
-                            if neo != musicSheet[sheetId]: print("틀렧");break
+                            if neo != musicSheet[sheetId]: break
                             else: sheetId = 0 if sheetId == musicSheetM-1 else sheetId + 1
-                            print('맞----')
                         else: 
-                            print("2번")
                             if maxPlayTime < totalM : 
                                 maxPlayTime, answer = totalM, musicTitle
                                 break
