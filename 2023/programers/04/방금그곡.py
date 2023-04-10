@@ -82,9 +82,9 @@ def solution(m, musicinfos):
 
 
 
-## 0410 푸는중 76점 ##############################################################################################
-dots = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-dotsdict = {"C":0, "C#":1, "D":2, "D#":3, "E":4, "F":5, "F#":6, "G":7, "G#":8, "A":9, "A#":10, "B":11}
+## 0410 푸는중 83점 ##############################################################################################
+dots = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "E#", "B#"]
+dotsdict = {"C":0, "C#":1, "D":2, "D#":3, "E":4, "F":5, "F#":6, "G":7, "G#":8, "A":9, "A#":10, "B":11, "E#":12, "B#":13}
 
 def encoding(view):
     musicSheet = []
@@ -94,21 +94,19 @@ def encoding(view):
         else: musicSheet.append(dotsdict[view[j]])
     return musicSheet
 
-
 def solution(m, musicinfos):
     maxPlayTime = -99
     answer = ''
     m = encoding(m)
     for find in musicinfos:
         startH, startM, endH, endM = int(find[0:2]), int(find[3:5]), int(find[6:8]), int(find[9:11])
-        totalM = 0
-        totalM = 60-startM+endM if endH > startH else endM
+        totalM = (60-startM+endM)+(endH-startH-1)*60 if endH > startH else endM
         musicTitle, musicSheet = '', ''
         for k in range(12, len(find)):
             if find[k] != ',': musicTitle += find[k]
             else: 
                 musicSheet = encoding(find[k+1:])
-                
+                if totalM < len(musicSheet): musicSheet = musicSheet[:totalM]
                 musicSheetM = len(musicSheet)
                 for i in range(musicSheetM):
                     if m[0] == musicSheet[i]:
@@ -117,10 +115,8 @@ def solution(m, musicinfos):
                             if neo != musicSheet[sheetId]: break
                             else: sheetId = 0 if sheetId == musicSheetM-1 else sheetId + 1
                         else: 
-                            if maxPlayTime < totalM : 
-                                maxPlayTime, answer = totalM, musicTitle
-                                break
-
+                            if maxPlayTime < totalM: maxPlayTime, answer = totalM, musicTitle
+                            break
                 else: break
                 
     if answer == '': answer = '(None)'
