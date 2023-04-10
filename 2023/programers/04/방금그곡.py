@@ -94,6 +94,12 @@ def encoding(view):
         else: musicSheet.append(dotsdict[view[j]])
     return musicSheet
 
+def resizing(totalM, encoded):
+    newMusicSheet = []
+    for i in range(totalM):
+        newMusicSheet += [encoded[i%len(encoded)]]
+    return newMusicSheet
+
 def solution(m, musicinfos):
     maxPlayTime = -99
     answer = ''
@@ -105,19 +111,13 @@ def solution(m, musicinfos):
         for k in range(12, len(find)):
             if find[k] != ',': musicTitle += find[k]
             else: 
-                musicSheet = encoding(find[k+1:])
-                if totalM < len(musicSheet): musicSheet = musicSheet[:totalM]
+                musicSheet = resizing(totalM, encoding(find[k+1:]))
                 musicSheetM = len(musicSheet)
                 for i in range(musicSheetM):
-                    if m[0] == musicSheet[i]:
-                        sheetId = i
-                        for neo in m:
-                            if neo != musicSheet[sheetId]: break
-                            else: sheetId = 0 if sheetId == musicSheetM-1 else sheetId + 1
-                        else: 
-                            if maxPlayTime < totalM: maxPlayTime, answer = totalM, musicTitle
-                            break
-                else: break
+                    if musicSheet[i] == m[0] and musicSheet[i:i+len(m)] == m:
+                        if maxPlayTime < totalM : maxPlayTime, answer = totalM, musicTitle
+                        break
+                break
                 
     if answer == '': answer = '(None)'
     return answer
