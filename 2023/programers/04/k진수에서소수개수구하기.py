@@ -34,6 +34,7 @@ def solution(n, k):
             number = ''
         elif order[i] != 0: number += str(order[i])
         i += 1
-    else: answer += isPrime(int(number))
+    else: 
+        if number != '' : answer += isPrime(int(number)) ## ''인지를 한번더 검사필요
             
     return answer
