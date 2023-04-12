@@ -1,7 +1,7 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/17684
 
+# 앜ㅋ 너무쉽죠?
 def solution(msg):
-    # msg = 'TOBEORNOTTOBEORTOBEORNOT'
     answer = []
     messageD = {'A':1, 'B':2, 'C':3, 'D':4, 'E':5, 'F':6, 'G':7, 'H':8, 'I':9, 
                 'J':10, 'K':11, 'L':12, 'M':13, 'N':14, 'O':15, 'P':16, 'Q':17, 
@@ -13,6 +13,8 @@ def solution(msg):
             pointer = i+2
             while True:
                 if msg[i:pointer] in messageD:
+                    if pointer > len(msg):
+                        return (answer+[messageD[msg[i:pointer]]])
                     pointer += 1
                 else:
                     answer.append(messageD[msg[i:pointer-1]])
@@ -20,8 +22,4 @@ def solution(msg):
                     lastDNumber += 1
                     i = pointer-1
                     break
-    else: print(i)
-        
-                    
-    
     return answer
