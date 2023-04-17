@@ -121,3 +121,41 @@ def solution(m, musicinfos):
                 
     if answer == '': answer = '(None)'
     return answer
+
+## 0417 풀이완 ###################################################################################################
+dots = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "E#", "B#"]
+dotsdict = {"C":0, "C#":1, "D":2, "D#":3, "E":4, "F":5, "F#":6, "G":7, "G#":8, "A":9, "A#":10, "B":11, "E#":12, "B#":13}
+
+def msToCodePrs(msNote):
+    msToCode = []
+    for i in range(len(msNote)):
+        if i+1 < len(msNote) and msNote[i+1] == '#': 
+            msToCode.append(dotsdict[msNote[i:i+2]])
+        elif msNote[i] != '#':
+            msToCode.append(dotsdict[msNote[i]])
+    return msToCode
+
+def solution(m, musicinfos):
+    answerM = ''
+    answerTime = -99
+    m = msToCodePrs(m) #runTime, m, msName, runMs 재생시간, 네오가들은노래, 재생곡이름, 재생곡악보
+    for musi in musicinfos:
+        startH, startM, endH, endM = int(musi[:5][:2]), int(musi[:5][3:]), int(musi[6:11][:2]), int(musi[6:11][3:])
+        runTime = 60*(endH-startH)+(endM)-(startM) 
+        view, msName = 12, ''
+        while musi[view] != ',':
+            msName += musi[view]
+            view += 1
+        else:   
+            msToCode = msToCodePrs(musi[view+1:])
+            runMs = []
+            for i in range(runTime):
+                runMs += [msToCode[i%len(msToCode)]]
+            
+        for i in range(len(runMs)):
+            if runMs[i:i+len(m)] == m:
+                if answerTime < runTime:
+                    answerM, answerTime = msName, runTime
+                    
+    answerM = '(None)' if answerM == '' else answerM
+    return answerM
