@@ -24,3 +24,27 @@ for tc in range(1, T+1):
       break
   else:
     print('#{} Possible'.format(tc))
+
+    
+ ## 배열에 안넣고 바로 계산하니까 시간초과는 안나는데 오답
+#import sys
+#sys.stdin = open('input.txt')
+
+T = int(input())
+for tc in range(1, T+1):
+  N, M, K = map(int, input().split())
+  pList = list(map(int, input().split()))
+  runTime = len(pList)+1
+  a = 1
+  charge = 0
+  for i in range(runTime):
+    if i%M == M:
+      charge += K
+    if i == sum(pList[:a]):
+      charge -= pList[a-1]
+      a += 1
+    if charge < -1:
+      print('#{} Impossible'.format(tc))
+      break
+  else:
+    print('#{} Possible'.format(tc))
