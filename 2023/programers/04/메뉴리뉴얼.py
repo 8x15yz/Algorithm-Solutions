@@ -37,3 +37,32 @@ def solution(orders, course):
                         break
     
     return answer
+
+
+# 이숑키봐라 ...
+def solution(orders, course):
+    answer = []
+    foodDict = {}
+    for d in range(len(orders)):
+        for dish in orders[d]:
+            if dish not in foodDict: foodDict[dish] = {d+1}
+            else: foodDict[dish].add(d+1)
+    
+    multiply = []
+    for dish in foodDict:
+        for comp in foodDict:
+            if dish == comp: continue
+            else:
+                mul = tuple(foodDict[dish] & foodDict[comp])
+                if len(mul) > 1 and mul not in multiply: multiply.append(mul)
+    
+    for mul in multiply:
+        ans = []
+        for dish in foodDict:
+            for m in mul:
+                if m not in foodDict[dish]: break
+            else: ans += [dish]
+        else:
+            if ans != '': answer.append(''.join(sorted(ans)))
+                    
+    return sorted(answer)
