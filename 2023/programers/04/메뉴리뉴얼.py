@@ -66,3 +66,29 @@ def solution(orders, course):
             if ans != '': answer.append(''.join(sorted(ans)))
                     
     return sorted(answer)
+
+
+# 풀었다 ~~~ ㅠㅠㅠㅠ
+from itertools import combinations
+def solution(orders, course):
+    answer = []
+    courseDict = [{} for _ in range(len(course))]
+    for order in orders:
+        for i in range(len(course)):
+            for a in list(combinations(order, course[i])):
+                ord = ''.join(sorted(a))
+                if ord in courseDict[i]: courseDict[i][ord] += 1
+                else: courseDict[i][ord] = 1
+    
+    for course in courseDict:
+        maxNum = 2
+        maxCourse = []
+        for cour in course:
+            if course[cour] > maxNum:
+                maxNum = course[cour]
+                maxCourse = [cour]
+            elif course[cour] == maxNum:
+                maxCourse.append(cour)
+        else: answer += maxCourse
+        
+    return sorted(answer)
