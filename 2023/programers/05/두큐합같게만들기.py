@@ -1,4 +1,5 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/118667
+# 투포인터로 풀어보려 했던 흔적
 def solution(queue1, queue2):
     answer = -2
     queue = queue1+queue2
@@ -21,3 +22,19 @@ def solution(queue1, queue2):
             
     print(p1%len(queue1), p2%len(queue1), sumq, half)
     return answer
+
+
+# 그냥 맨땅에 헤딩코드 만들어보니까 63점으로 선방
+def solution(q1, q2):
+    answer = 0
+    half = sum(q1+q2)//2
+    while True:
+        if sum(q1) == half : break
+        if len(q1)*len(q2) == 0: return -1
+        else:
+            if sum(q1) > half: q2 += [q1.pop(0)]
+            else: q1 += [q2.pop(0)]
+            answer += 1
+        
+    return answer
+
