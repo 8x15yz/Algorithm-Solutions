@@ -38,3 +38,22 @@ def solution(n):
         
     return answer%1234567
 # 이거 내가 맞출수는 있는 문제일까???????????
+
+
+## ㄹㅈㄷ / 말고 //쓰니까 한방에 됨
+## 정답코드
+def factorial(n):
+    ans = 1
+    for i in range(n, 0, -1): ans *= i
+    return ans
+
+def solution(n):
+    answer = 0
+    PQtuple = (n//2, 1) if n%2 else (n//2, 0)
+    p, q= PQtuple
+    for i in range(p+1):
+        answer += int(factorial(p+q)//(factorial(p)*factorial(q)))
+        p -= 1
+        q += 2
+        
+    return answer%1234567
