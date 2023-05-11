@@ -63,3 +63,18 @@ def solution(k, tangerine):
         for i in range(len(tGD)):
             if sum(tGD[:i]) >= k:
                 return i
+
+           
+        
+## 정답코드
+def solution(k, tangerine):
+    answer = 0
+    tGD = [0 for _ in range(max(tangerine))]
+    for i in tangerine: tGD[i-1] += 1
+    tGDsorted = sorted(tGD)
+    
+    cnt = 0
+    while k > 0:
+        k -= tGDsorted.pop()
+        cnt += 1
+    return cnt
