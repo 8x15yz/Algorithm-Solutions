@@ -17,3 +17,21 @@ def solution(k, tangerine):
         else: i += 1
     
     return answer
+
+
+
+
+## 람다함수써보기 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+from itertools import combinations
+def solution(k, tangerine):
+    answer = 0
+    tGD = [0 for _ in range(max(tangerine))]
+    for i in tangerine: tGD[i-1] += 1
+    
+    i = 1
+    while True:
+        tCList = list(map(lambda x: sum(x), list(combinations(tGD, i))))
+        if k <= max(tCList): return i
+        else: i += 1
+    
+    return answer
