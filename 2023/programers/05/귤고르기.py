@@ -49,3 +49,17 @@ def solution(k, tangerine):
             answer = i
             break
     return answer
+
+
+### 예외처리 시작
+from itertools import combinations
+def solution(k, tangerine):
+    answer = 0
+    tGD = [0 for _ in range(max(tangerine))]
+    for i in tangerine: tGD[i-1] += 1
+    if max(tGD) >= k: return 1
+    else:
+        tGD = sorted(tGD, reverse=True)
+        for i in range(len(tGD)):
+            if sum(tGD[:i]) >= k:
+                return i
