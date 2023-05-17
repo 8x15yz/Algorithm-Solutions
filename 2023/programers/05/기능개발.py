@@ -8,7 +8,7 @@ def solution(progresses, speeds):
     cnt = 1
     for i in range(len(progresses)):
         dep = ceil((100-progresses[i])/speeds[i])
-        if maxDep <= dep:
+        if maxDep < dep:
             maxDep = dep
             answer.append(cnt)
             cnt = 1
