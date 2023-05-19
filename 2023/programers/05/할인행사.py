@@ -7,12 +7,9 @@ def solution(want, number, discount):
     for i in range(len(want)):
         wantD[want[i]] = number[i]
         buyD[want[i]] = 0
-    for i in range(len(discount)-10):
+    for i in range(len(discount)-9):
         copyD = buyD.copy()
-        print(i, discount[i:i+10])
-        for sale in discount[i:i+3]:
-            print(copyD, wantD)
+        for sale in discount[i:i+10]:
             if sale in copyD: copyD[sale] += 1
-            if copyD == wantD: return i+1
-        print()
-    else: return 0
+            if copyD == wantD: answer += 1
+    else: return answer
