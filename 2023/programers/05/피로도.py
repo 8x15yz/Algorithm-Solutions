@@ -10,3 +10,23 @@ def solution(k, dungeons):
         else: break
         
     return answer
+
+
+# 정답코드
+from itertools import permutations
+def solution(k, dungeons):
+    answer = []
+    possible = list(permutations(dungeons, len(dungeons)))
+    for pos in possible:
+        hp = k
+        cnt = 0
+        for p in pos:
+            if hp >= p[0]:
+                hp -= p[1]
+                cnt += 1
+            else: 
+                answer.append(cnt)
+                break
+        else: 
+            answer.append(cnt)
+    return max(answer)
