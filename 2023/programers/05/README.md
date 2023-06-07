@@ -1,5 +1,5 @@
 # 05월 코테 준비
-![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/ebecbe80-ba0f-4688-ace9-bcae26dd6c4c)
+![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/ae39382d-f9c4-4222-933d-d0398eceefe9)
 
 
 <br><br>
@@ -33,4 +33,10 @@
 ### 0522 월
 ✅ [2️⃣ 타겟 넘버](타겟넘버.py) <br>
 ✅ [2️⃣ 피로도](피로도.py) <br>
+
+### 0523 화
+✅ [2️⃣ 전화번호 목록](전화번호목록.py) <br>
+
+### 0524 수
+⬜ [2️⃣ 더 맵게](더맵게.py) <br>
 
