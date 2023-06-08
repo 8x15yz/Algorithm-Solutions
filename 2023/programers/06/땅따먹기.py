@@ -44,7 +44,7 @@ def solution(land):
         else:
             if sum(duplicateCheck) == 0: 
                 answer[i] = comp
-                if duplicateFlag != -2:
+                if basket:
                     basket[0][path[duplicateFlag]] = 0
                     basket[-1][path[i]] = 0
                     cRange = i-duplicateFlag-1
