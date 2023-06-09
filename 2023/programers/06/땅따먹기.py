@@ -105,3 +105,15 @@ def solution(land):
                         basket = []
             else: basket.append(duplicateCheck)
     return sum(answer)
+
+
+
+###### "정답코드" 0609  dp 라는 것을 배우고 적용하엿다
+# 7줄로 끝나다니 .. dp는 정말 멋있다
+def solution(land):
+    for i in range(1, len(land)):
+        for j in range(4):
+            comp = land[i-1].copy()
+            comp.pop(j)
+            land[i][j] += max(comp)
+    return max(land[-1])
