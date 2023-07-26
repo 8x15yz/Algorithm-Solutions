@@ -1,4 +1,4 @@
-# https://github.com/8x15yz/Algorithm-Solutions/new/main/2023/programers/07
+# https://school.programmers.co.kr/learn/courses/30/lessons/42584
 
 # 이게문제냐?
 def solution(prices):
