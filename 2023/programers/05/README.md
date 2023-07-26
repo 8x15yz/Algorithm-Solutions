@@ -1,4 +1,4 @@
-# 05월 코테 준비
+# 05월
 ![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/ae39382d-f9c4-4222-933d-d0398eceefe9)
 
 
