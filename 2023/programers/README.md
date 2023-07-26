@@ -2,4 +2,4 @@
 ![image](https://user-images.githubusercontent.com/87743473/223004189-16152ca2-1097-4233-b7a4-3503d7b3c335.png)
 ![image](https://user-images.githubusercontent.com/87743473/235818222-916c6219-8a4e-44a9-9b13-b7701c2db1af.png)
 ![image](https://user-images.githubusercontent.com/87743473/235818523-d3f5288b-120d-4339-8ef2-eced76e70974.png)
-![image](https://user-images.githubusercontent.com/87743473/235819155-10e9b1cd-36fe-4823-8e14-6e3f72d639f7.png)
+![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/1638f8c1-71d7-40f4-b2cb-371862a02360)
