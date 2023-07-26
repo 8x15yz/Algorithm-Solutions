@@ -1,5 +1,6 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/67257
 # 진짜드럽게풀엇음 ..
+# 근데 다들 드럽게 풀긴 했네 ㅋㅋㅋㅋ
 
 def cal(a, b, cal):
     if cal == "-": return str(int(a)-int(b))
