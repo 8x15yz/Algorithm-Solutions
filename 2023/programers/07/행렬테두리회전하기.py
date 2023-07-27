@@ -27,57 +27,55 @@ def viewArr(arr):
         print(a)
         
 def solution(rows, cols, queries):
-    rows, cols, queries = 6, 6, [[2, 2, 5, 4]]
+    rows, cols, queries = 3, 3, [[1, 1, 2, 2], [1, 2, 2, 3], [2, 1, 3, 2], [2, 2, 3, 3]]
     answer = []
+    note1, note2, note3, note4= 0, 0, 0, 0
     arr = [['{0:02d}'.format(i*cols+j+1) for j in range(cols)] for i in range(rows)]
     for que in queries:
+        min = 99999
         note4 = arr[que[0]-1][que[1]-1]
         for j in range(que[3]-1, que[1]-1, -1):
-            print(arr[que[0]-1][j])
+            min = int(arr[que[0]-1][j]) if int(arr[que[0]-1][j]) < min else min
             if j == que[1]: arr[que[0]-1][j] = note4
             else:
                 if j == que[3]-1 : note1 = arr[que[0]-1][j]
                 arr[que[0]-1][j] = arr[que[0]-1][j-1]
             
             
-        viewArr(arr)
+        #viewArr(arr)
         #print(note)
-        print()
+        #print()
         for j in range(que[2]-1, que[0]-1, -1):
-            print(arr[j][que[3]-1])
+            min = int(arr[j][que[3]-1]) if int(arr[j][que[3]-1]) < min else min
             if j == que[0]: arr[j][que[3]-1] = note1
             else:
                 if j == que[2]-1 : note2 = arr[j][que[3]-1]
                 arr[j][que[3]-1] = arr[j-1][que[3]-1]
             
-        viewArr(arr)
+        #viewArr(arr)
         #print(note)
-        print()
+        #print()
         for j in range(que[1]-1, que[3]-1):
-            print(arr[que[2]-1][j])
-            if j == que[3]: arr[que[2]-1][j] = note2
+            min = int(arr[que[2]-1][j]) if int(arr[que[2]-1][j]) < min else min
+            if j == que[3]-2: arr[que[2]-1][j] = note2
             else:
                 if j == que[1]-1 : note3 = arr[que[2]-1][j]
                 arr[que[2]-1][j] = arr[que[2]-1][j+1]
             
-        viewArr(arr)
+        #viewArr(arr)
         #print(note)
-        print()
+        #print()
         for j in range(que[0]-1, que[2]-1):
-            print(arr[j][que[1]-1])
-            if j == que[2]: arr[j][que[1]-1] = note3
+            min = int(arr[j][que[1]-1]) if int(arr[j][que[1]-1]) < min else min
+            if j == que[2]-2: arr[j][que[1]-1] = note3
             else:
                 #if j == que[0]-1 : note = arr[j][que[1]-1]
                 arr[j][que[1]-1] = arr[j+1][que[1]-1]
             
-        viewArr(arr)
+        #viewArr(arr)
         #print(note)
-        print('*')
-        
-        
-        
-            
-    return answer
+        #print('*')
+        answer.append(min)
         
         
             
