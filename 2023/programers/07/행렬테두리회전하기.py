@@ -21,3 +21,4 @@ def solution(rows, cols, queries):
             answer.append(min)
     
     return answer
+# 이건 글러먹은 코드다 처음부터 다시 쓰기
