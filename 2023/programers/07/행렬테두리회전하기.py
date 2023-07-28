@@ -64,3 +64,46 @@ def solution(rows, cols, queries):
             
     return answer
 # 난 이것도 글러먹었다고 생각해 
+
+
+# 0728 다시시도중
+def ViewArr(arr):
+    for a in arr:
+        print(a)
+    print()
+def solution(rows, cols, queries):
+    # rows, cols, queries = 3, 3, [[1,1,2,2],[1,2,2,3],[2,1,3,2],[2,2,3,3]]
+    answer = []
+    arr = [['{0:02d}'.format(i*cols+j+1) for j in range(cols)] for i in range(rows)]
+    ViewArr(arr)
+    
+    for  que in queries:
+        si, sj, ei, ej = que[0]-1, que[1]-1, que[2]-1, que[3]-1
+        note4 = arr[si][sj]
+        for j in range(ej, sj, -1):
+            if j == sj-1: arr[si][j] = note4
+            else:
+                if j == ej: note1 = arr[si][j]
+                arr[si][j] = arr[si][j-1]
+            # print(arr[si][j], arr[si][j-1])
+        # si = -1 if si == 0 else si
+        si = si-1 if ei-si <= 1 else si
+        for i in range(ei, si, -1):
+            if i == si+1: arr[i][ej] = note1
+            else: 
+                if i == ei: note2 = arr[i][ej]
+                arr[i][ej] = arr[i-1][ej]
+        # ej = 2 if ej == 1 else ej
+        ej = ej + 1 if ej-sj <= 1 else ej
+        for j in range(sj, ej):
+            if j == ej-1: arr[ei][j] = note2
+            else:
+                if j == sj: note3 = arr[ei][j]
+                arr[ei][j] = arr[ei][j+1]
+        for i in range(si, ei):
+            if i == ei-1: arr[i][sj] = note3
+            else: arr[i][sj] = arr[i+1][sj]
+        ViewArr(arr)
+            
+            
+    return answer
