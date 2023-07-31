@@ -1,5 +1,6 @@
 #7월
-![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/6506b507-397f-4925-b6db-cb4804e672cd)
+![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/2dd2c6ec-b7a7-4c62-a93f-a6983056c775)
+
 
 
 ### 0725 화
@@ -14,3 +15,10 @@
 ### 0727 목
 ⬜ [2️⃣ 행렬 테두리 회전하기](행렬테두리회전하기.py) <br>
 ✅ [2️⃣ 2 x n 타일링](2xn타일링.py) <br>
+
+### 0728 금
+⬜ [2️⃣ 행렬 테두리 회전하기](행렬테두리회전하기.py) <br>
+⬜ [2️⃣ 거리두기 확인하기](거리두기확인하기.py) <br>
+
+### 0731 월
+✅ [2️⃣ 방문길이](방문길이.py) <br>
