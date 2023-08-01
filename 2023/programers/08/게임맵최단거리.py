@@ -45,3 +45,27 @@ def solution(maps):
                                 visit.append((ni, nj))
                                 queue.append((ni, nj, route+1))
 
+
+# 물구나무를 서봤는데요 ..
+# 정답코드
+dt = [(0, 1), (1, 0), (-1, 0), (0, -1)]
+
+def solution(maps):
+    N, M = len(maps), len(maps[0])
+    def bfs(i, j):
+        queue = []
+        queue.append((i, j, 1))
+        
+        while queue:
+            i, j, route = queue.pop(0)
+            if i == N-1 and j == M-1: return route
+
+            if maps[i][j] == 0: continue
+            maps[i][j] = 0
+            
+            for di, dj in dt:
+                ni, nj = i+di, j+dj
+                if 0 <= ni < N and 0 <= nj < M:
+                    queue.append((ni, nj, route+1))
+        return -1
+    return bfs(0, 0)
