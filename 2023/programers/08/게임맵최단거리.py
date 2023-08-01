@@ -27,19 +27,21 @@ dt = [(0, 1), (1, 0), (-1, 0), (0, -1)]
 def solution(maps):
     N, M = len(maps), len(maps[0])
     visit = [(0, 0)]
-    
     for i in range(N):
         for j in range(M):
-            if i == N-1 and j == M-1: return -1
-            visit.append((i, j))
-            queue = [(i, j, 1)]
-            while queue:
-                si, sj, route = queue.pop(0)
-                print(si, sj, route)
-                if si == N-1 and sj == M-1: return route
-                else:
-                    for di, dj in dt:
-                        ni, nj = si+di, sj+dj
-                        if 0 <= ni < N and 0 <= nj < M and maps[ni][nj] and (ni, nj) not in visit:
-                            visit.append((ni, nj))
-                            queue.append((ni, nj, route+1))
+            if maps[i][j]:
+                visit.append((i, j))
+                queue = [(i, j, 1)]
+                while queue:
+                    # print(queue)
+                    si, sj, route = queue.pop(0)
+                    # print(si, sj, route)
+                    if si == N-1 and sj == M-1: return route
+                    else:
+                        for di, dj in dt:
+                            ni, nj = si+di, sj+dj
+                            if 0 <= ni < N and 0 <= nj < M and maps[ni][nj] and (ni, nj) not in visit:
+                                # print(maps[ni][nj], maps[si][sj], si, sj, ni, nj)
+                                visit.append((ni, nj))
+                                queue.append((ni, nj, route+1))
+
