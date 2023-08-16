@@ -34,3 +34,5 @@ def inToTrie(pointer, word, wlist):
     return wlist
 ans = inToTrie(pointer, "", [])
 print(ans)
+# 트라이 만들고 단어 끝마다 런타임 달아주는 것까지 작성
+# 이제 하고싶은 일은 접두사마다 런타임 구하는 로직 짜기
