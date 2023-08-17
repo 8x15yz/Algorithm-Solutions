@@ -12,10 +12,9 @@ for _ in range(int(input())):
         pointer = pointer[newKey]
         front += "--"
 
-def unpack(pointers):
-    if pointers == {}: return 
-    for key in sorted(pointers.keys()):
+def unpack(pointer):
+    if pointer == {}: return 
+    for key in sorted(pointer.keys()):
         print(key)
-        pointer = pointers[key]
-        unpack(pointer)
+        unpack(pointer[key])
 unpack(trie)
