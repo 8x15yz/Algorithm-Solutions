@@ -11,7 +11,6 @@ for _ in range(int(input())):
             pointer[newKey] = {}
         pointer = pointer[newKey]
         front += "--"
-print(trie)
 
 def unpack(pointers):
     if pointers == {}: return 
