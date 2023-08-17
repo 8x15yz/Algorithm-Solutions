@@ -40,6 +40,6 @@
 ⬜ [☁4️⃣ 플레이리스트 만들기](goorm152122.py) <br>
 
 ### 0817 목
-✅ [Gold III 개미굴](boj14725.py) <br>
+✅ [boj Gold III 개미굴](boj14725.py) <br>
 
 
