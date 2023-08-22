@@ -46,3 +46,31 @@ def solution(places):
 
 # bfs 풀이가 정답인것 같아서 그걸로 풀어보려고 함
 # 코드 뒤엎기 ..
+dt = [(0, 1), (0, -1), (-1, 0), (1, 0)]
+def solution(places):
+    answer = []
+    for place in places:
+        def conf(place):
+            for i in range(5):
+                for j in range(5):
+                    if place[i][j] == "P":
+                        visit = [(i, j)]
+                        queue = [(i, j)]
+                        while queue:
+                            si, sj = queue.pop(0)
+                            for di, dj in dt:
+                                ni, nj = si + di, sj + dj
+                                if 0 <= ni < 5 and 0 <= nj < 5:
+                                    if abs(ni-i)+abs(nj-j) <= 2 and (ni, nj) not in visit:
+                                        if place[ni][nj] == "P": return 0
+                                        elif place[ni][nj] == "O":
+                                            queue.append((ni, nj))
+                                            visit.append((ni, nj))
+            return 1
+                                    
+        answer.append(conf(place))
+                        
+    return answer
+
+# 헐감동.. 1트에맞았어
+# 김현두안죽엇다 ~~~~~
