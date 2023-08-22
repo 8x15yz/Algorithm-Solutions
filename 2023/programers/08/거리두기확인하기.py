@@ -43,3 +43,6 @@ def solution(places):
                     break
         else: answer.append(1)
     return answer
+
+# bfs 풀이가 정답인것 같아서 그걸로 풀어보려고 함
+# 코드 뒤엎기 ..
