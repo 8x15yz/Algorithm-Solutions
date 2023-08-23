@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/12886
+# 이런 허벌문제가 골드 5라니 ..
 # 연산순서 '*', '+', '-', '/'
 
 s, t = map(int, input().split())
@@ -13,17 +14,10 @@ def bfs(s, cnt):
     while queue:
         i, hist = queue.pop(0)
         if i == t: return hist
-        if (op := i*i) <= limit and op not in visit: 
-            queue.append((op, hist+"*"))
-            visit.append(op)
-
-        if (op := i+i) <= limit and op not in visit: 
-            queue.append((op, hist+"+"))
-            visit.append(op)
-
-        if (op := 1) <= limit and op not in visit: 
-            queue.append((op, hist+"/"))
-            visit.append(op)
+        for op, cal in [(i*i, "*"), (i+i, "+"), (1, "/")]:
+            if op <= limit and op not in visit: 
+                queue.append((op, hist+cal))
+                visit.append(op)
             
     else: return -1
         
