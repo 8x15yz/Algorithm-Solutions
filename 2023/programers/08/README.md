@@ -1,5 +1,6 @@
 # 08 월
-![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/dd0ddf08-b336-456d-a49a-b9231c0cdadb)
+![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/c6748689-a2c1-466c-a911-abf5bb6bdd29)
+
 
 
 ### 0801 화!
