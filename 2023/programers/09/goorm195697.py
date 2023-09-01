@@ -21,18 +21,4 @@ def cal(rem):
 	return v
 print(cal(rem))
 
-## 이게 정해코드라고함 ~ 이거 보니까 내 코드 시갖초과 날만하다
-def solution(n):
-    count = 1
-    for j in range(1,n):
-        m1 = j
-        while True:
-            if j == n:
-                count += 1
-                break
-            elif j > n:
-                break
-            m1 += 1
-            j += m1
 
-    return count
