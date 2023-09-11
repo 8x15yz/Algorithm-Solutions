@@ -7,9 +7,9 @@ def solution(s):
         unit = []
         for j in range(0, len(s), i):
             unit.append(s[j:j+i])
-        if len(unit[-1]) < len(unit[-2]):
-            part = unit.pop()
-            unit[-1] += part
+        #if len(unit[-1]) < len(unit[-2]):    # 이부분 없애야 맞음 .. 진짜 문제 꼬라지봐라 ㅠㅠㅠㅠ
+        #    part = unit.pop()
+        #    unit[-1] += part
         
         ans = ""
         cnt, comp = 1, ""
