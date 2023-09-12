@@ -7,6 +7,9 @@
 <br>
 ### 0911 월료일
 ✅ [swea D3 최대상금](swea1244.py) <br>
-✅ [2️⃣ 문자열 압축](programmers60057.py) <br>
-⬜ [2️⃣ 후보키](programmers42890.py) <br>
+✅ [programmers lv.2 문자열 압축](programmers60057.py) <br>
+⬜ [programmers lv.2 후보키](programmers42890.py) <br>
 <br>
+### 0912 화요일
+✅ [programmers lv.2 모음사전](programmers84512.py) <br>
+⬜ [programmers lv.2 후보키](programmers42890.py) <br>
