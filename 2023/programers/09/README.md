@@ -12,4 +12,7 @@
 <br>
 ### 0912 화요일
 ✅ [programmers lv.2 모음사전](programmers84512.py) <br>
-⬜ [programmers lv.2 후보키](programmers42890.py) <br>
+✅ [programmers lv.2 후보키](programmers42890.py) <br>
+<br>
+### 0914 수요일
+✅ [programmers lv.2 순위 검색](programmers72412.py) <br>
