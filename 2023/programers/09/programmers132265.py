@@ -14,3 +14,24 @@ def solution(topping):
         if cheolSu[poped] == 0: del cheolSu[poped]
         if len(cheolSu) == len(dongSaeng): answer += 1
     return answer
+
+
+## 그냥 푸는것도 되긴함 ..
+def solution(topping):
+    answer = 0
+    cheolSu = {}
+    for i in topping:
+        if i not in cheolSu: cheolSu[i] = 1
+        else: cheolSu[i] += 1
+
+    dongSaeng = {}
+    for i in topping:
+        if i not in dongSaeng: dongSaeng[i] = 1
+        else: dongSaeng[i] += 1
+        
+        if cheolSu[i] == 1: del cheolSu[i]
+        else: cheolSu[i] -= 1
+        
+        if len(dongSaeng) == len(cheolSu):
+            answer += 1
+    return answer
