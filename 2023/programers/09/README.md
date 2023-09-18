@@ -17,3 +17,6 @@
 ### 0914 수요일
 ⬜ [programmers lv.2 순위 검색](programmers72412.py) <br>
 ✅ [programmers lv.2 뒤에있는 큰 수 찾기](programmers154539.py) <br>
+<br>
+### 0914 수요일
+✅ [programmers lv.2 롤케이크 자르기](programmers132265.py) <br>
