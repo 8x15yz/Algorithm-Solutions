@@ -20,3 +20,5 @@
 <br>
 ### 0914 수요일
 ✅ [programmers lv.2 롤케이크 자르기](programmers132265.py) <br>
+✅ [programmers lv.2 숫자 변환하기](programmers154538.py) <br>
+
