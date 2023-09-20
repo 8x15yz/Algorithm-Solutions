@@ -21,3 +21,22 @@ def solution(bridge_length, weight, truck_weights):
 
     for i in range(len(time)):
         if time[i] == []: return i+1
+
+
+## 이뿌게 고치기
+def solution(bridge_length, weight, truck_weights):
+
+    time = [[] for _ in range(len(truck_weights)*bridge_length)]
+    start, now = -1, 0
+    
+    while now < len(truck_weights):
+        start += 1
+        for i in range(bridge_length):
+            if sum(time[start+i]) + truck_weights[now] <= weight: 
+                time[start+i].append(truck_weights[now])
+            else: break
+        else: now += 1
+
+    for i in range(len(time)):
+        if time[i] == []: return i+1
+    return len(time)+1
