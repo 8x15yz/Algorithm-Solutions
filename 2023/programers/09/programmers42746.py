@@ -1,6 +1,6 @@
 ## https://school.programmers.co.kr/learn/courses/30/lessons/42746
-## 밑장빼기 할라다가 딱 걸려브러 ..
 
+# 시간초과 
 from itertools import permutations
 def solution(numbers):
     answer = []
@@ -10,3 +10,10 @@ def solution(numbers):
         answer.append(int(ca))
         
     return str(max(answer))
+
+
+# 정해
+def solution(numbers):
+    numbers = list(map(str, numbers))
+    numbers.sort(key = lambda x: (x * 4)[:4], reverse = True)
+    return str(int("".join(numbers)))
