@@ -1,3 +1,4 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/12934?language=java
 // int자료형보다 값이 커질것같으면 long을 쓰는게 좋다
 
 public class IsMul {
