@@ -24,9 +24,10 @@
 ✅ [1️⃣ 콜라츠 추측](12943.java) <br>
 ✅ [1️⃣ 서울에서 김서방 찾기](12919.java) <br>
 ✅ [1️⃣ 음양더하기](76501.java) <br>
-✅ [우테코 5기 프리코스 온보딩 문풀 problem2](woo0502.java) <br>
+⬜ [우테코 5기 프리코스 온보딩 문풀 problem2](woo0502.java) <br>
 <br>
 ### 1012 THU
+✅ [우테코 5기 프리코스 온보딩 문풀 problem2](woo0502.java) <br>
 ✅ [우테코 5기 프리코스 온보딩 문풀 problem3](woo0503.java) <br>
 ✅ [우테코 5기 프리코스 온보딩 문풀 problem4](woo0504.java) <br>
 ✅ [우테코 5기 프리코스 온보딩 문풀 problem5](woo0505.java) <br>
