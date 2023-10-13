@@ -1,46 +1,42 @@
-// 풀고잇는중 ..
-// 파이썬으로 갈기고 싶다 이 문제
-// input[i] == input[i-1] 이걸로는 비교할 수 없다는거 : input[i].equals(input[i-1]) 이걸로 해야 먹힘 !!!!!!!기억해 
+// inVal[i] == inVal[i-1] 이걸로는 비교할 수 없다는거 : inVal[i].equals(inVal[i-1]) 이걸로 해야 먹힘 !!!!!!!기억해 
 // String[]을 String으로 : String.join() => https://developer-talk.tistory.com/451
-
 class Problem2 {
-    public static String solution(String[] input) {
-        String output = "";
+    public static String solution(String[] inVal) {
+        for(String n : inVal) {System.out.print(n);}
+        System.out.println();
         int pointer = 0;
         int compare = 1;
-        boolean isEnd = false;
-        boolean isSame = false;
+        int[] isSame = new int[inVal.length];
+        String outVal = "";
         
-        while (isEnd == false) {            
-            while (input[pointer].equals(input[compare]) && !isEnd) {
+        while (compare < inVal.length){
+            while (inVal[pointer].equals(inVal[compare])) {
+                isSame[pointer] = 1;
+                isSame[compare] = 1;
                 compare += 1;
-                isSame = true;
-                if (compare == input.length){isEnd = true;}
             }
-            if (!isSame) {
-                output += input[pointer];
-            }
-            isSame = false;
+            if (isSame[pointer] != 1) {outVal += inVal[pointer];}
             pointer = compare;
             compare += 1;
-            if (compare == input.length || pointer == input.length){isEnd = true;}
         }
-        return output;
+        
+        return outVal;
     }
 }
 
 public class Main {
     static Problem2 solution = new Problem2();
     public static void main(String[] args) {
-        String cryptogram = "zyelleyz" + " ";
-        String[] input = String.valueOf(cryptogram).split("");
-        String sResult = "";
+        String cryptogram = "browoanoommnaon";
+        String[] inVal = String.valueOf(cryptogram+"*").split("");
+        String outVal = "";
         while (true) {    
-            sResult = solution.solution(input)+" ";
-            System.out.println(sResult);
-            if (sResult.equals(String.join("", input)) || sResult == "") break;
-            input = String.valueOf(sResult).split("");
+            outVal = solution.solution(inVal)+"*";
+            if (outVal.equals(String.join("", inVal)) || outVal == "") break;
+            inVal = String.valueOf(outVal).split("");
         }
-        System.out.println(sResult);
+        System.out.print("the Answer IS : ");        
+        System.out.println(outVal);
+
     }
 }
