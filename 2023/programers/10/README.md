@@ -31,15 +31,16 @@
 <br>
 ### 1013 FRI
 ✅ [우테코 5기 프리코스 온보딩 문풀 problem2](woo0502.java) <br>
+✅ [우테코 5기 프리코스 온보딩 문풀 problem3](woo0503.java) <br>
+✅ [우테코 5기 프리코스 온보딩 문풀 problem4](woo0504.java) <br>
+✅ [우테코 5기 프리코스 온보딩 문풀 problem5](woo0505.java) <br>
 ✅ [1️⃣ 나누어 떨어지는 숫자 배열](12910.java) <br>
 ✅ [1️⃣ 핸드폰 번호 가리기](12948.java) <br>
 ✅ [1️⃣ 없는 숫자 더하기](86051.java) <br>
 ✅ [1️⃣ 제일 작은 수 제거하기](12935.java) <br>
-✅ [우테코 5기 프리코스 온보딩 문풀 problem3](woo0503.java) <br>
 <br>
 ### 1014 SAT
-✅ [우테코 5기 프리코스 온보딩 문풀 problem4](woo0504.java) <br>
-✅ [우테코 5기 프리코스 온보딩 문풀 problem5](woo0505.java) <br>
+
 ✅ [우테코 5기 프리코스 온보딩 문풀 problem6](woo0506.java) <br>
 ✅ [우테코 5기 프리코스 온보딩 문풀 problem7](woo0507.java) <br>
 
