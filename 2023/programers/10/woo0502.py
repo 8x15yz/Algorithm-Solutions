@@ -1,21 +1,13 @@
-cryptogram = "browoanoommnaon "
+cryptogram = "browoanoommnaon*"
 pointer, compare = 0, 1
+isSame = [0 for _ in range(len(cryptogram))]
 answer = ""
 
 while compare < len(cryptogram):
-    print(cryptogram[pointer], cryptogram[compare])
-    if cryptogram[pointer] == cryptogram[compare]:
-        while cryptogram[pointer] == cryptogram[compare]:
-            print(pointer, compare, "*")
-            if compare == len(cryptogram): break
-            compare += 1
-        pointer, compare = compare, compare + 1
-        continue
-    else: 
-        if compare == len(cryptogram): break
-        if (cryptogram[pointer] != cryptogram[compare]):
-            answer += cryptogram[pointer]
-    
-    
-    
+    while cryptogram[pointer] == cryptogram[compare]:
+        isSame[pointer], isSame[compare] = 1, 1
+        compare += 1
+    if not isSame[pointer]: answer += cryptogram[pointer]
+    pointer, compare = compare, compare+1
+
 print(answer)
