@@ -12,4 +12,7 @@ for i in range(len(forms)-1):
                     result.add(forms[j][0])
                   
 print(list(result))
+## break 문 필요함
+
+
                 
