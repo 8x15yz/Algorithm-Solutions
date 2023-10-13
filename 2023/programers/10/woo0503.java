@@ -1,6 +1,6 @@
 // 너무쉬웟더 10분컷
 
-class Problem2 {
+class Problem3 {
     public int solution(String[] number) {
         int outVal = 0;
         String[] TSN = {"3", "6", "9"};
@@ -18,7 +18,7 @@ class Problem2 {
 }
 
 public class Main {
-    static Problem2 solution = new Problem2();
+    static Problem3 solution = new Problem3();
     public static void main(String[] args) {
         int answer = 0;
         int req = 33;
