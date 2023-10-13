@@ -21,9 +21,6 @@ class Problem4 {
 public class Main {
     static Problem4 solution = new Problem4();
     public static void main(String[] args) {
-        char sc = "a".charAt(0);
-        int scToint = (int) sc;
-        char iTochar = (char) (scToint+ 25);
         String[] inVal = String.valueOf("I love you").split("");
         String answer = solution.solution(inVal);
         System.out.println(answer);
