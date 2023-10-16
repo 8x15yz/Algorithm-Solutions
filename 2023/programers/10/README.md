@@ -38,6 +38,7 @@
 <br>
 ### 1016 MON
 ✅ [우테코 5기 프리코스 온보딩 문풀 problem6](woo0506.java) <br>
+⬜ [우테코 5기 프리코스 온보딩 문풀 problem7](woo0507.java) <br>
 <br>
 ### 1017 TUE
 ✅ [우테코 5기 프리코스 온보딩 문풀 problem7](woo0507.java) <br>
