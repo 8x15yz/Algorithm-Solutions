@@ -1,22 +1,21 @@
 // ArrayList 사용 : https://hianna.tistory.com/568
 // 완전탐색
+// python에서 in 메서드 => 리스트.contains(찾는요소) : https://developer-talk.tistory.com/519
 import java.util.ArrayList;
-import java.util.Arrays;
-
-
 class Problem6 {
     public ArrayList<String> solution(String[][] inVal) {
         ArrayList<String> outVal = new ArrayList<String>();
         for(int i = 0; i < inVal.length; i++){
             for(int k = 0; k < inVal[i][1].length()-1; k++){
-                String pntStr = inVal[i][1].valueOf(k)+inVal[i][1].valueOf(k+1);
+                String pntStr = String.valueOf(inVal[i][1].charAt(k))+String.valueOf(inVal[i][1].charAt(k+1));
                 for(int j = i+1; j < inVal.length; j++){ // 겹치면 이 부분에서 break
-                    for(int l = 0; i < inVal[j][1].length()-1; j++){
-                        String comStr = inVal[j][1].valueOf(l)+inVal[j][1].valueOf(l+1);
+                    for(int l = 0; l < inVal[j][1].length()-1; l++){
+                        String comStr = String.valueOf(inVal[j][1].charAt(l))+String.valueOf(inVal[j][1].charAt(l+1));
                         if (pntStr.equals(comStr)) {
-                            outVal.add(inVal[i][0]);
-                            outVal.add(inVal[j][0]);
+                            if (!outVal.contains(inVal[i][0])) {outVal.add(inVal[i][0]);}
+                            if (!outVal.contains(inVal[j][0])) {outVal.add(inVal[j][0]);}
                             break;
+                            
                         }
                     }
                 }
