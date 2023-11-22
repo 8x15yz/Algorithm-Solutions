@@ -31,7 +31,6 @@ def solution(plans):
 
 
 
-# 오 꽤 많이 맞췄어
 def getTime(time):
     h, m = time.split(":")
     return int(h)*60+int(m)
@@ -40,41 +39,34 @@ def preprocess(plans):
     for plan in plans:
         plan[1], plan[2] = getTime(plan[1]), int(plan[2])
     plans.sort(key = lambda x : x[-2], reverse=True)
-    # print(plans)
     return plans
 
 
 def solution(plans):
+    # plans = 
     answer = []
     later = []
-    this = 0
     plans = preprocess(plans)
     while True:
-        # print(later, "????")
         p = plans.pop()
         if not plans: 
-            # print(p[1]+p[2])
             answer.append(p[0])
             break
         t, comp = p[1]+p[2], plans[-1][1]
         if t > comp:
             later.append([p[0], t-comp])
-            # print(t, comp, later)
         elif t < comp:
-            left = comp-t
             answer.append(p[0])
-            # print(t, comp, left)
             while later:
                 l = later.pop()
-                # print("?", left+l[1], comp )
                 if t+l[1] <= comp:
                     answer.append(l[0])
+                    t += l[1]
                 else:
                     l[1] = t+l[1]-comp
                     later.append(l)
                     break
         else:
-            # print(t, comp)
             answer.append(p[0])
     while later:
         answer.append(later.pop()[0])
