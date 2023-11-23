@@ -1,6 +1,6 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/86971
-# 76점짜리 풀이 ..
 import copy
+
 def addEl(key, val):
     if key not in mesh:
         mesh[key] = []
@@ -19,10 +19,8 @@ def solution(n, wires):
             continue
             
         cMesh = copy.deepcopy(mesh)
-        for j in range(len(cMesh[cut[0]])):
-            if cMesh[cut[0]][j] == cut[1]:
-                cMesh[cut[0]].pop(j)
-                break
+        cMesh[cut[0]].remove(cut[1])
+        cMesh[cut[1]].remove(cut[0])
         
         stack = [1]
         visit = [1]
@@ -34,6 +32,8 @@ def solution(n, wires):
                 if node not in visit:
                     stack.append(node)
                     visit.append(node)
+                    
         comp = len(mesh)-cnt
         answer = min(answer, abs(comp-cnt))
+        
     return answer
