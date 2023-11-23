@@ -1,6 +1,7 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/250136
 
 v = [(0, 1), (1, 0), (-1, 0), (0, -1)]
+
 def solution(land):
     w, h = len(land[0]), len(land)
     visit = [[0 for _ in range(w)] for _ in range(h)]
@@ -19,8 +20,8 @@ def solution(land):
                         if 0 <= ni < h and 0 <= nj < w and visit[ni][nj] != 2 and land[ni][nj] == 1:
                             queue.append((ni, nj))
                             visit[ni][nj] = 2
-                            minW = min(minW, nj)
-                            maxW = max(maxW, nj)
+                            minW = minW if minW < nj else nj
+                            maxW = maxW if maxW > nj else nj
                             cnt += 1
                 if cnt != 0:
                     res.append((cnt, minW, maxW))
@@ -28,7 +29,7 @@ def solution(land):
     for i in range(w):
         total = 0
         for cnt, minW, maxW in res:
-            if minW<= i <=maxW:
+            if minW <= i <= maxW:
                 total += cnt
         answer = max(answer, total)
                 
