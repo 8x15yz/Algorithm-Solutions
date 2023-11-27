@@ -34,3 +34,40 @@ def solution(land):
         answer = max(answer, total)
                 
     return answer
+
+
+## 시간 줄이려고 
+d = [(0, 1), (1, 0), (-1, 0), (0, -1)]
+
+def solution(land):
+    w, h = len(land[0]), len(land)
+    answer = 0
+    res = []
+    for i in range(h):
+        for j in range(w):
+            cnt = 0
+            if land[i][j] == 1:
+                queue = [(i, j)]
+                minW, maxW = w, 0
+                while queue:
+                    si, sj = queue.pop(0)
+                    for di, dj in d:
+                        ni, nj = si+di, sj+dj
+                        if 0 <= ni < h and 0 <= nj < w and land[ni][nj] == 1:
+                            queue.append((ni, nj))
+                            minW = min(minW, ni)
+                            maxW = max(maxW, ni)
+                            land[ni][nj] = 2
+                            cnt += 1
+                land[ni][nj] = 2
+                if cnt != 0:
+                    res.append((minW, maxW, cnt))
+                    
+    for i in range(w):
+        m = 0
+        for minW, maxW, cnt in res:
+            if minW <= i <= maxW:
+                m += cnt
+        answer = max(answer, m)
+                
+    return answer
