@@ -37,11 +37,13 @@ def solution(land):
 
 
 ## 시간 줄이려고 ㅠㅠㅠ!!!
+## 도랏 .. 됐다 정해코드 ..!
 d = [(0, 0), (0, 1), (1, 0), (-1, 0), (0, -1)]
 
 def solution(land):
-    res = []
     w, h = len(land[0]), len(land)
+    res = [0 for _ in range(w)]
+    print(res)
     for i in range(h):
         for j in range(w):
             if land[i][j] == 1:
@@ -58,13 +60,7 @@ def solution(land):
                             cnt += 1
                             minW = min(minW, nj)
                             maxW = max(maxW, nj)
-                res.append((minW, maxW, cnt))
-                
-    answer = 0      
-    for i in range(w):
-        total = 0
-        for minW, maxW, cnt in res:
-            if minW <= i <= maxW:
-                total += cnt
-        answer = max(answer, total)
-    return answer
+                for l in range(minW, maxW+1):
+                    res[l] += cnt
+
+    return max(res)
