@@ -1,39 +1,36 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/159993
-d = [(0, 1), (1, 0), (-1, 0), (0, -1)]
-def solution(maps):
-    answer = -1
-    h, w = len(maps), len(maps[0])
-    def findL():
-        for i in range(h):
-            for j in range(w):
-                if maps[i][j] == "S":
-                    visit = []
-                    queue = [(i, j)]
-                    while queue:
-                        si, sj = queue.pop(0)
-                        if maps[si][sj] == "L": return si, sj
-                        for di, dj in d:
-                            ni, nj = di+si, dj+sj
-                            if 0 <= ni < h and 0 <= nj < w and maps[ni][nj] != "X" and (ni, nj) not in visit:
-                                queue.append((ni, nj))
-                                visit.append((ni, nj))
-        return -1
-    mid = findL()
+# 왜.. 왜냐고
+def find(maps):
+    for i in range(len(maps)):
+        for j in range(len(maps[0])):
+            if maps[i][j] == "S":
+                return i, j
     
-    if mid == -1: return -1
-    else:
-        def findE():
-            visit = []
-            queue = [mid]
-            while queue:
-                si, sj = queue.pop(0)
-                if maps[si][sj] == "E": return si, sj
-                for di, dj in d:
-                    ni, nj = di+si, dj+sj
-                    if 0 <= ni < h and 0 <= nj < w and maps[ni][nj] != "X" and (ni, nj) not in visit:
-                        queue.append((ni, nj))
-                        visit.append((ni, nj))
-        return -1
-        print(findE())
-        
+d = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+def bfs(maps, i, j, flag, visit):
+    queue = [(i, j, 1)]
+    while queue:
+        si, sj, cnt = queue.pop(0)
+        if maps[si][sj] == flag:
+            return si, sj, visit, cnt
+        for di, dj in d:
+            ni, nj = si+di, sj+dj
+            if 0 <= ni < len(maps) and 0 <= nj < len(maps[0]) and visit[ni][nj] == 0 and maps[ni][nj] != "X":
+                queue.append((ni, nj, cnt+1))
+                visit[ni][nj] = cnt
+    return -1
+    
+
+def solution(maps):
+    answer = -2
+    visit = [[0 for _ in range(len(maps[0]))] for _ in range(len(maps))]
+    i, j = find(maps)
+    findL = bfs(maps, i, j, "L", visit)
+    if findL == -1: return -1
+    else: i, j, visit, cnt = findL
+    answer += cnt
+    findE = bfs(maps, i, j, "E", visit)
+    if findE == -1: return -1
+    else: i, j, visit, cnt = findE
+    answer += cnt
     return answer
