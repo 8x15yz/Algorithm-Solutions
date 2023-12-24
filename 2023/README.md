@@ -1,17 +1,17 @@
 # Algorithm-Solutions
 ### [기록노션](https://www.notion.so/2023-757752a8e173477fb22d9429ab9368fe)
-[2023-12](./2023/programers/12)<br>
-[2023-11](./2023/programers/11)<br>
-[2023-10](./2023/programers/10)<br>
-[2023-09](./2023/programers/09)<br>
-[2023-08](./2023/programers/08)<br>
-[2023-07](./2023/programers/07)<br>
-[2023-06](./2023/programers/06)<br>
-[2023-05](./2023/programers/05)<br>
-[2023-04](./2023/programers/04)<br>
-[2023-03](./2023/programers/03)<br>
-[2023-02](./2023/programers/02)<br>
-[2023-01](./2023/programers/01)<br>
+[2023-12](./12)<br>
+[2023-11](./11)<br>
+[2023-10](./10)<br>
+[2023-09](./09)<br>
+[2023-08](./08)<br>
+[2023-07](./07)<br>
+[2023-06](./06)<br>
+[2023-05](./05)<br>
+[2023-04](./04)<br>
+[2023-03](./03)<br>
+[2023-02](./02)<br>
+[2023-01](./01)<br>
 ![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/b7e9a250-5071-40de-85f7-520bd16455b5)<br>
 ![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/fd20e805-8203-48a8-b7b1-aa917cee14f9)<br>
 ![image](https://github.com/8x15yz/Algorithm-Solutions/assets/87743473/3357e980-3155-4f38-816e-d2954bd8b8dd)<br>
