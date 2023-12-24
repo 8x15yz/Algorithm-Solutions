@@ -1,4 +1,4 @@
-# Algorithm-Solutions
+# 2023 알고리즘 문제풀이
 ### [기록노션](https://www.notion.so/2023-757752a8e173477fb22d9429ab9368fe)
 [2023-12](./12)<br>
 [2023-11](./11)<br>
