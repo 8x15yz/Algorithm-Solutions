@@ -286,6 +286,48 @@
       color: var(--muted);
     }
     .review-verdict strong { color: var(--text); }
+
+    .sub-problems {
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+    .sub-problems-title {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+    .sub-problem {
+      margin-bottom: 14px;
+      padding: 10px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .sub-q {
+      margin: 0 0 6px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .sub-problem pre {
+      margin: 0 0 6px;
+      font-size: 0.78rem;
+    }
+    .sub-answer {
+      margin-top: 6px;
+    }
+    .sub-answer summary {
+      font-size: 0.8rem;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+    }
+    .sub-answer summary:hover { color: var(--text); }
+    .sub-answer pre {
+      margin-top: 8px;
+      font-size: 0.78rem;
+    }
   </style>
 </head>
 <body>
@@ -421,6 +463,203 @@ if not next_one.isdigit():
 
 "" in "rev"             # True  ← 부분문자열 검색이라서</code></pre>
           <p>문자열 <code>in</code>만 substring 검색이고, 리스트/집합 <code>in</code>은 원소 검색이에요.<br>그래서 <code>data[i] in {'r','e','v'}</code>처럼 <strong>집합</strong>으로 쓰면 이 혼란이 없어요.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="day-divider">
+
+  <!-- ===== 0425 ===== -->
+  <div class="day-entry">
+    <div class="day-header">
+      <span class="day-date">0425</span>
+      <span class="day-weekday">토</span>
+    </div>
+    <div class="problem-list">
+
+      <div class="problem-item">
+        <div class="problem-title-row">
+          <span class="status">✅</span>
+          <span class="problem-source">pyalgo</span>
+          <span class="problem-name">출정인원 선발</span>
+        </div>
+        <div class="note">체력·정신력·기술력·방어력 총합 기준 상위 30% 선발. <code>limit = floor(n×0.3)</code>이 0이면 빈 배열 반환. 경계 점수에 동점자가 있으면 해당 점수 전원 제외. 결과는 알파벳 역순 출력.</div>
+        <div class="code-wrap">
+          <pre><code class="language-python">def solution(data):
+    log = ""
+    res = []
+    for arr in data:
+        sum_skill = sum(arr[1:])
+        if res == []:
+            res += [(arr[0], sum_skill)]
+        if sum_skill >= res[0][1] :
+            if (arr[0], sum_skill) not in res:
+            	res = [(arr[0], sum_skill)] + res
+        else:
+            res += [(arr[0], sum_skill)]
+    party = len(res)
+    party_30 = int(party*0.3)
+    final = res[:party_30]
+    while final:
+        if res[party_30][1] == final[-1][1]:
+            final.pop()
+        else:
+            break
+    f_res = []
+    if final:
+        for fin in final:
+            f_res += fin[0]
+
+    return f_res</code></pre>
+          <details class="review-details">
+            <summary>🔍 리뷰 보기</summary>
+            <div class="review-panel">
+
+              <div class="review-section">
+                <h4>01 정확성</h4>
+                <p class="review-warn">⚠️ 정렬 버그·역순 정렬 누락·문자 분리 버그 3가지 발견 (제공 예시는 우연히 통과)</p>
+                <p class="review-body">
+                  <strong>① 정렬 버그</strong>: <code>res[0]</code>(현재 최고점)과만 비교하므로 최고점보다 낮은 원소는 모두 맨 뒤에 추가됨. 예) <code>[A=100, B=46, C=90]</code> 입력 시 <code>res = [('A',100),('B',46),('C',90)]</code>으로 C가 B 뒤에 위치. 제공 예시는 최고점 A가 첫 번째로 입력되어 우연히 통과하지만 순서가 바뀌면 오답이 됨.<br>
+                  <strong>② 알파벳 역순 정렬 누락</strong>: 결과를 알파벳 역순으로 출력해야 하지만 <code>f_res</code>에 대한 정렬 로직이 없음. 예시가 선발자 1명이라 드러나지 않음.<br>
+                  <strong>③ <code>f_res += fin[0]</code> 문자 분리</strong>: <code>fin[0]</code>이 문자열이므로 <code>+=</code>가 각 문자를 개별 원소로 추가. 예시 이름이 모두 한 글자라 통과하지만 여러 글자 이름이면 <code>['A','l','i','c','e']</code>로 분리됨. <code>f_res.append(fin[0])</code>이 올바름.<br>
+                  <strong>④ 미사용 변수</strong>: <code>log = ""</code> 삭제 필요.
+                </p>
+                <div class="review-code"><pre><code class="language-python">def solution(data):
+    scored = sorted(
+        [(arr[0], sum(arr[1:])) for arr in data],
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    n = len(scored)
+    limit = int(n * 0.3)
+
+    if limit == 0:
+        return []
+
+    # ① limit으로 자른다 — 경계 마지막 사람의 점수를 기준점으로 저장
+    cutoff = scored[limit - 1][1]
+
+    # ② 경계(scored[limit-1])와 바로 다음(scored[limit])이 동점이면
+    #    그 점수를 경계 안에서도 전원 제거
+    if limit < n and scored[limit][1] == cutoff:
+        selected = [name for name, score in scored[:limit] if score > cutoff]
+    else:
+        selected = [name for name, _ in scored[:limit]]
+
+    return sorted(selected, reverse=True)</code></pre></div>
+              </div>
+
+              <div class="review-section">
+                <h4>02 시간복잡도</h4>
+                <p class="review-warn">⚠️ O(n²) — <code>sorted()</code> 활용으로 O(n log n)으로 개선 가능</p>
+                <p class="review-body">루프 내 <code>not in res</code> 선형 탐색 O(n), <code>res = [x] + res</code> 앞 삽입 O(n) → 전체 O(n²). n ≤ 10이라 체감 차이는 없지만 <code>sorted()</code> 한 번으로 O(n log n)에 완전 정렬 가능.</p>
+              </div>
+
+              <div class="review-section">
+                <h4>03 공간복잡도</h4>
+                <p class="review-ok">✅ 이상 없음</p>
+                <p class="review-body"><code>res</code>, <code>final</code>, <code>f_res</code> 모두 O(n) 수준으로 적절.</p>
+              </div>
+
+              <div class="review-section">
+                <h4>04 코드 품질</h4>
+                <p class="review-warn">⚠️ 미사용 변수, 관용 표현 미사용, 변수명 불명확</p>
+                <p class="review-body">
+                  <code>log = ""</code> 미사용 → 삭제.<br>
+                  <code>if res == []</code> → <code>if not res</code> (Python 관용 표현).<br>
+                  <code>party</code>, <code>party_30</code>, <code>f_res</code> → <code>total</code>, <code>limit</code>, <code>selected</code> 권장.<br>
+                  초기화 로직이 루프 안에 분산되어 첫 원소에서 두 블록이 모두 실행되는 구조가 혼란스러움.
+                </p>
+              </div>
+
+              <div class="review-section">
+                <h4>05 보안</h4>
+                <p class="review-ok">✅ 이상 없음</p>
+                <p class="review-body">알고리즘 문제 특성상 외부 입력 위협 없음. 제약 조건(n ≤ 10)이 문제 단계에서 보장됨.</p>
+              </div>
+
+              <div class="review-verdict">
+                <strong>총평:</strong> <code>sorted()</code> 한 줄로 해결할 수 있는 정렬을 직접 구현하면서 정렬 버그가 발생했고, 역순 정렬과 <code>append</code> 사용도 누락됨. 동점자 처리 아이디어는 올바른 방향이었으나 잘못된 정렬 위에서 동작하므로 신뢰할 수 없음. <code>sorted()</code>로 재작성하면 코드가 절반으로 줄고 버그 세 가지가 동시에 해소됨.
+              </div>
+
+            </div>
+          </details>
+        </div>
+
+        <div class="sub-problems">
+          <h4 class="sub-problems-title">🔧 연습 문제 — <code>sorted(list, key=lambda x: ..., reverse=...)</code></h4>
+
+          <div class="sub-problem">
+            <p class="sub-q"><strong>① </strong> 학생별 과목 점수의 합을 구해 <strong>내림차순</strong>으로 정렬하세요.</p>
+            <pre><code class="language-python">students = [['Alice', 80, 90], ['Bob', 70, 60], ['Carol', 95, 85]]
+# 결과: [('Carol', 180), ('Alice', 170), ('Bob', 130)]</code></pre>
+            <details class="sub-answer">
+              <summary>정답 보기</summary>
+              <pre><code class="language-python">result = sorted(
+    [(s[0], sum(s[1:])) for s in students],
+    key=lambda x: x[1],
+    reverse=True
+)</code></pre>
+            </details>
+          </div>
+
+          <div class="sub-problem">
+            <p class="sub-q"><strong>② </strong> 단어 리스트를 <strong>길이 오름차순</strong>으로 정렬하세요.</p>
+            <pre><code class="language-python">words = ['banana', 'kiwi', 'apple', 'fig']
+# 결과: [('fig', 3), ('kiwi', 4), ('apple', 5), ('banana', 6)]</code></pre>
+            <details class="sub-answer">
+              <summary>정답 보기</summary>
+              <pre><code class="language-python">result = sorted(
+    [(w, len(w)) for w in words],
+    key=lambda x: x[1]
+)</code></pre>
+            </details>
+          </div>
+
+          <div class="sub-problem">
+            <p class="sub-q"><strong>③ </strong> 상품의 <strong>할인가</strong>(정가 × (1 - 할인율))를 기준으로 <strong>내림차순</strong> 정렬하세요.</p>
+            <pre><code class="language-python">items = [['shoe', 50000, 0.2], ['bag', 80000, 0.1], ['hat', 30000, 0.5]]
+# 결과: [('bag', 72000.0), ('shoe', 40000.0), ('hat', 15000.0)]</code></pre>
+            <details class="sub-answer">
+              <summary>정답 보기</summary>
+              <pre><code class="language-python">result = sorted(
+    [(item[0], item[1] * (1 - item[2])) for item in items],
+    key=lambda x: x[1],
+    reverse=True
+)</code></pre>
+            </details>
+          </div>
+
+          <div class="sub-problem">
+            <p class="sub-q"><strong>④ </strong> 팀별 점수의 <strong>평균</strong>을 기준으로 <strong>내림차순</strong> 정렬하세요.</p>
+            <pre><code class="language-python">teams = [['A팀', 80, 70, 90], ['B팀', 60, 85, 75], ['C팀', 95, 90, 88]]
+# 결과: [('C팀', 91.0), ('A팀', 80.0), ('B팀', 73.33...)]</code></pre>
+            <details class="sub-answer">
+              <summary>정답 보기</summary>
+              <pre><code class="language-python">result = sorted(
+    [(t[0], sum(t[1:]) / len(t[1:])) for t in teams],
+    key=lambda x: x[1],
+    reverse=True
+)</code></pre>
+            </details>
+          </div>
+
+          <div class="sub-problem">
+            <p class="sub-q"><strong>⑤ </strong> 숫자의 <strong>절댓값</strong>을 기준으로 <strong>오름차순</strong> 정렬하세요.</p>
+            <pre><code class="language-python">numbers = [('a', -5), ('b', 3), ('c', -1), ('d', 8)]
+# 결과: [('c', -1), ('b', 3), ('a', -5), ('d', 8)]</code></pre>
+            <details class="sub-answer">
+              <summary>정답 보기</summary>
+              <pre><code class="language-python">result = sorted(
+    numbers,
+    key=lambda x: abs(x[1])
+)</code></pre>
+            </details>
+          </div>
+
         </div>
       </div>
 
