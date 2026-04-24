@@ -1,2 +1,214 @@
-알고리즘/파이썬 문법 연마
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithm Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f7f9fc;
+      --border: #e8ecf2;
+      --text: #1a202c;
+      --muted: #718096;
+      --accent: #4f7df3;
+      --accent-bg: #eef2ff;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .header-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .site-title span { color: var(--accent); }
+    .github-link {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s;
+    }
+    .github-link:hover { color: var(--text); }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .intro {
+      margin-bottom: 52px;
+    }
+    .intro h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .intro p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    section { margin-bottom: 44px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .month-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .month-card {
+      display: block;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .month-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(79, 125, 243, 0.1);
+    }
+    .month-card.current {
+      background: var(--accent-bg);
+      border-color: var(--accent);
+    }
+    .month-card .month-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .month-card.current .month-name { color: var(--accent); }
+    .month-card .month-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .archive-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .archive-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      transition: border-color 0.15s;
+    }
+    .archive-item:hover { border-color: #c4cdd8; }
+    .archive-year { font-weight: 600; margin-bottom: 2px; }
+    .archive-desc { color: var(--muted); font-size: 12px; }
+    .archive-arrow { color: var(--muted); font-size: 13px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-title">algo<span>.</span>log</div>
+    <a href="https://github.com/punc3/Algorithm-Solutions" class="github-link" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+      GitHub
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <h1>알고리즘 풀이 기록</h1>
+    <p>날짜별로 푼 문제와 짧은 후기를 남기는 공간입니다.<br>
+    파이썬 / 알고리즘 문법 연마. 2026년부터 다시 시작.</p>
+  </div>
+
+  <section>
+    <div class="section-label">2026</div>
+    <div class="month-grid">
+      <a href="202604.html" class="month-card current">
+        <div class="month-name">04월</div>
+        <div class="month-sub">2026 · April</div>
+      </a>
+      <!-- 다음 달 추가 시:
+      <a href="202605.html" class="month-card">
+        <div class="month-name">05월</div>
+        <div class="month-sub">2026 · May</div>
+      </a>
+      -->
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Archive</div>
+    <div class="archive-list">
+      <a href="2023/" class="archive-item">
+        <div>
+          <div class="archive-year">2023</div>
+          <div class="archive-desc">Programmers 위주 풀이</div>
+        </div>
+        <div class="archive-arrow">→</div>
+      </a>
+      <a href="2022/" class="archive-item">
+        <div>
+          <div class="archive-year">2022</div>
+          <div class="archive-desc">BOJ / SWEA / 이론 정리</div>
+        </div>
+        <div class="archive-arrow">→</div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>Algorithm Solutions · 2026</footer>
+
+</body>
+</html>
