@@ -39,7 +39,7 @@
       padding: 20px 0;
     }
     .header-inner {
-      max-width: 680px;
+      max-width: min(66vw, 1080px);
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -63,7 +63,7 @@
     .site-title span { color: var(--accent); }
 
     main {
-      max-width: 680px;
+      max-width: min(66vw, 1080px);
       margin: 0 auto;
       padding: 40px 24px 80px;
     }
@@ -382,22 +382,6 @@ if not next_one.isdigit():
 
             </div>
           </details>
-        </div>
-        <div class="code-wrap">
-          <pre><code class="language-python">def solution(data):
-                ## 코드 정리
-                res = 0
-                for a in range(len(data)):
-                    if data[a] in 'rev':
-                        if data[a+1:a+2] in 'rev':
-                            continue
-                        if data[a+1:a+3].isdigit() and 10 >= int(data[a+1:a+3]):
-                            res += int(data[a+1:a+3])
-                        else:
-                            res += int(data[a+1:a+2])
-                res = str(res)[0] + '월 ' + str(res)[1:] + '일'
-                return res
-            </code></pre>
         </div>
         <!-- 후기가 있으면 아래 note 사용
         <div class="note">문제 풀고 느낀 점...</div>
