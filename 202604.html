@@ -174,6 +174,24 @@
       border-left: 2px solid var(--border);
     }
 
+    /* Comment */
+    .comment {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.75;
+      padding: 8px 12px;
+      background: #fffdf0;
+      border-left: 2px solid #f6c56a;
+      border-radius: 0 6px 6px 0;
+    }
+    .comment-meta {
+      font-size: 11px;
+      color: #a0aec0;
+      margin-bottom: 3px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
     /* Divider between days */
     .day-divider {
       border: none;
@@ -300,25 +318,25 @@
           <span class="problem-name">암호문</span>
         </div>
         <div class="note">
-            r, e, v 문자 뒤에 오는 숫자들을 모두 더해서 형식에 맞게 재구성하는 작업
-            조건으로:
-            1. rev 뒤에는 2개까지 올 수 있음 (ex. r10)
-            2. 뒤에 2개까지 오지만, 11 이상부터는 무효. 11은 그냥 1으로 수집
+            r, e, v 문자 뒤에 오는 숫자들을 모두 더해서 형식에 맞게 재구성하는 작업 </br>
+            조건으로: </br>
+            1. rev 뒤에는 2개까지 올 수 있음 (ex. r10) </br>
+            2. 뒤에 2개까지 오지만, 11 이상부터는 무효. 11은 그냥 1으로 수집 </br>
         </div>
         <div class="code-wrap">
-          <pre><code class="language-python">def solution(data):
-                ## 1차시도
-                res = 0
-                for a in range(len(data)):
-                    if data[a] in 'rev':
-                        if data[a+1:a+2] in 'rev':
-                            continue
-                        if data[a+1:a+3].isdigit() and 10 >= int(data[a+1:a+3]):
-                            res += int(data[a+1:a+3])
-                        else:
-                            res += int(data[a+1:a+2])
-                res = str(res)[0] + '월 ' + str(res)[1:] + '일'
-                return res
+          <pre><code class="language-python">
+def solution(data):
+    res = 0
+    for a in range(len(data)):
+        if data[a] in 'rev':
+            if data[a+1:a+2] in 'rev':
+                continue
+            if data[a+1:a+3].isdigit() and 10 >= int(data[a+1:a+3]):
+                res += int(data[a+1:a+3])
+            else:
+                res += int(data[a+1:a+2])
+    res = str(res)[0] + '월 ' + str(res)[1:] + '일'
+    return res
             </code></pre>
           <details class="review-details">
             <summary>🔍 리뷰 보기</summary>
@@ -386,6 +404,24 @@ if not next_one.isdigit():
         <!-- 후기가 있으면 아래 note 사용
         <div class="note">문제 풀고 느낀 점...</div>
         -->
+        <div class="comment">
+          <div class="comment-meta">💬 04.24</div>
+          <p><strong><code>"" in "rev"</code> 가 <code>True</code>인 이유</strong><br><br>파이썬 공식 스펙에 명시된 동작이에요.</p>
+          <p><strong>파이썬의 <code>in</code> 연산자 — 문자열 버전 정의</strong><br><br><code>x in s</code> → s 안에 x가 <strong>부분문자열(substring)</strong>로 존재하면 <code>True</code><br><br>빈 문자열 <code>""</code>은 <strong>모든 문자열의 부분문자열</strong>이에요.<br>수학적으로, 빈 집합은 모든 집합의 부분집합인 것과 같은 논리예요.</p>
+          <pre><code>"" in "rev"    # True
+"" in "hello"  # True
+"" in ""       # True  ← 빈 문자열 안에도 True</code></pre>
+          <p><strong>왜 이게 문제가 됐냐면</strong></p>
+          <pre><code>data[a+1:a+2]  # a가 마지막 인덱스일 때 → ""
+"" in 'rev'    # True ← 숫자 체크 전에 통과해버림</code></pre>
+          <p>원래 의도는 <em>"다음 문자가 r/e/v면 건너뛰어라"</em> 였는데,<br><code>a</code>가 문자열 끝일 때 슬라이스가 <code>""</code>를 반환하고,<br><code>"" in 'rev'</code>가 <code>True</code>라서 <strong>continue가 실행되어</strong> 버려요.<br><br>이 경우엔 결과적으로 건너뛰니까 크래시는 안 나지만,<br><strong>의도와 다른 이유로 통과</strong>하는 거라 코드 읽는 사람이 헷갈려요.</p>
+          <p><strong>리스트/집합 <code>in</code>과 비교</strong></p>
+          <pre><code>"" in ["r", "e", "v"]   # False ← "" 원소가 없으니까
+"" in {"r", "e", "v"}   # False
+
+"" in "rev"             # True  ← 부분문자열 검색이라서</code></pre>
+          <p>문자열 <code>in</code>만 substring 검색이고, 리스트/집합 <code>in</code>은 원소 검색이에요.<br>그래서 <code>data[i] in {'r','e','v'}</code>처럼 <strong>집합</strong>으로 쓰면 이 혼란이 없어요.</p>
+        </div>
       </div>
 
     </div>
