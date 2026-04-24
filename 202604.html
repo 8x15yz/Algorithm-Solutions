@@ -1,0 +1,16 @@
+
+0424 pyalgo 암호문
+```
+def solution(data):
+    res = 0
+    for a in range(len(data)):
+        if data[a] in 'rev':
+            if data[a+1:a+2] in 'rev':
+                continue
+            if data[a+1:a+3].isdigit() and 10 >= int(data[a+1:a+3]) :
+                res += int(data[a+1:a+3])
+            else:
+                res += int(data[a+1:a+2])
+    res = str(res)[0]+'월 '+str(res)[1:]+'일'
+    return res
+```
