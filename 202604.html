@@ -188,6 +188,86 @@
       font-size: 12px;
       color: var(--muted);
     }
+
+    /* Review toggle */
+    .review-details {
+      margin-top: 10px;
+    }
+    .review-details summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-bg);
+      border: 1px solid #c7d7fa;
+      border-radius: 5px;
+      padding: 4px 11px;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      transition: background 0.15s;
+    }
+    .review-details summary::-webkit-details-marker { display: none; }
+    .review-details[open] summary { background: #dce8ff; }
+    .review-panel {
+      margin-top: 10px;
+      padding: 16px 18px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+    .review-section {
+      margin-bottom: 14px;
+    }
+    .review-section:last-child { margin-bottom: 0; }
+    .review-section h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .review-ok  { color: var(--ok); font-weight: 600; }
+    .review-warn { color: #c05621; font-weight: 600; }
+    .review-body {
+      margin-top: 5px;
+      color: var(--muted);
+    }
+    .review-body code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1px 5px;
+    }
+    .review-code {
+      margin-top: 8px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .review-code pre {
+      border-radius: 6px;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .review-code pre code.hljs {
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .review-verdict {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .review-verdict strong { color: var(--text); }
   </style>
 </head>
 <body>
@@ -219,19 +299,105 @@
           <span class="problem-source">pyalgo</span>
           <span class="problem-name">암호문</span>
         </div>
+        <div class="note">
+            r, e, v 문자 뒤에 오는 숫자들을 모두 더해서 형식에 맞게 재구성하는 작업
+            조건으로:
+            1. rev 뒤에는 2개까지 올 수 있음 (ex. r10)
+            2. 뒤에 2개까지 오지만, 11 이상부터는 무효. 11은 그냥 1으로 수집
+        </div>
         <div class="code-wrap">
           <pre><code class="language-python">def solution(data):
-    res = 0
-    for a in range(len(data)):
-        if data[a] in 'rev':
-            if data[a+1:a+2] in 'rev':
-                continue
-            if data[a+1:a+3].isdigit() and 10 >= int(data[a+1:a+3]):
-                res += int(data[a+1:a+3])
-            else:
-                res += int(data[a+1:a+2])
-    res = str(res)[0] + '월 ' + str(res)[1:] + '일'
-    return res</code></pre>
+                ## 1차시도
+                res = 0
+                for a in range(len(data)):
+                    if data[a] in 'rev':
+                        if data[a+1:a+2] in 'rev':
+                            continue
+                        if data[a+1:a+3].isdigit() and 10 >= int(data[a+1:a+3]):
+                            res += int(data[a+1:a+3])
+                        else:
+                            res += int(data[a+1:a+2])
+                res = str(res)[0] + '월 ' + str(res)[1:] + '일'
+                return res
+            </code></pre>
+          <details class="review-details">
+            <summary>🔍 리뷰 보기</summary>
+            <div class="review-panel">
+
+              <div class="review-section">
+                <h4>01 정확성</h4>
+                <p class="review-warn">⚠️ 문제 있음 — ValueError 발생 가능</p>
+                <p class="review-body"><code>data[a]</code>가 r/e/v이고 다음 문자가 r/e/v도, 숫자도 아닐 때 <code>else</code>에서 <code>int(data[a+1:a+2])</code>가 터진다. 예: <code>"reverse"</code>에서 <code>'r'</code> 다음 <code>'s'</code> → <code>int('s')</code> → <strong>ValueError</strong>. 또한 <code>'' in 'rev'</code>가 <code>True</code>라 끝 문자 처리가 의도와 다를 수 있다.</p>
+                <div class="review-code"><pre><code class="language-python"># 수정: 다음 문자가 숫자가 아니면 건너뜀
+if not next_one.isdigit():
+    continue</code></pre></div>
+              </div>
+
+              <div class="review-section">
+                <h4>02 시간복잡도</h4>
+                <p class="review-ok">✅ 이상 없음 — O(n)</p>
+                <p class="review-body">단일 루프, 내부 연산 모두 O(1). 다만 <code>data[a+1:a+2]</code>와 <code>data[a+1:a+3]</code>을 매 반복마다 중복 생성 — 변수로 한 번만 뽑으면 된다.</p>
+              </div>
+
+              <div class="review-section">
+                <h4>03 공간복잡도</h4>
+                <p class="review-ok">✅ 이상 없음 — O(1)</p>
+                <p class="review-body">결과 누적 변수 하나, 임시 슬라이스 몇 개 외에 추가 자료구조 없음. 재귀도 없음.</p>
+              </div>
+
+              <div class="review-section">
+                <h4>04 코드 품질</h4>
+                <p class="review-warn">⚠️ 문제 있음 — 3가지</p>
+                <p class="review-body">
+                  <strong>① 변수명:</strong> <code>a</code> → <code>i</code>, <code>res</code> → <code>total</code><br>
+                  <strong>② <code>data[a] in 'rev'</code>:</strong> 빈 문자열도 포함되어 오해 유발 → <code>data[i] in {'r','e','v'}</code><br>
+                  <strong>③ 슬라이스 중복:</strong> <code>one</code>, <code>two</code> 변수로 분리
+                </p>
+                <div class="review-code"><pre><code class="language-python">def solution(data):
+    total = 0
+    for i in range(len(data)):
+        if data[i] not in {'r', 'e', 'v'}:
+            continue
+        one = data[i+1:i+2]
+        if not one.isdigit():
+            continue
+        two = data[i+1:i+3]
+        if two.isdigit() and int(two) <= 10:
+            total += int(two)
+        else:
+            total += int(one)
+    s = str(total)
+    return s[0] + '월 ' + s[1:] + '일'</code></pre></div>
+              </div>
+
+              <div class="review-section">
+                <h4>05 보안 관점</h4>
+                <p class="review-ok">✅ 이상 없음</p>
+                <p class="review-body">알고리즘 문제 내부 처리, 외부 입력 검증 이슈 없음. 정규표현식 미사용.</p>
+              </div>
+
+              <div class="review-verdict">
+                <strong>총평:</strong> 핵심 로직(2자리 숫자 파싱, 월/일 분리)은 올바르나, r/e/v 뒤에 숫자가 없는 일반 단어가 올 때 ValueError로 크래시하는 치명적 엣지케이스와 <code>in 'rev'</code> 패턴의 의도 불명확함이 실전 디버깅을 어렵게 만든다.
+              </div>
+
+            </div>
+          </details>
+        </div>
+        <div class="code-wrap">
+          <pre><code class="language-python">def solution(data):
+                ## 코드 정리
+                res = 0
+                for a in range(len(data)):
+                    if data[a] in 'rev':
+                        if data[a+1:a+2] in 'rev':
+                            continue
+                        if data[a+1:a+3].isdigit() and 10 >= int(data[a+1:a+3]):
+                            res += int(data[a+1:a+3])
+                        else:
+                            res += int(data[a+1:a+2])
+                res = str(res)[0] + '월 ' + str(res)[1:] + '일'
+                return res
+            </code></pre>
         </div>
         <!-- 후기가 있으면 아래 note 사용
         <div class="note">문제 풀고 느낀 점...</div>
